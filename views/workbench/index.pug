@@ -1,0 +1,50 @@
+extends ../layout1
+block append script
+  script(src='./javascripts/table.js')
+block content
+  .container
+    table#dtBasicExample.table.table-striped(style='text-align: center;')
+      thead
+        tr
+          th(scope='col') نام محصول
+          th(scope='col') توضیحات
+          th(scope='col') قیمت
+          th(scope='col') عملیات
+      tbody
+        each item in products
+          tr
+            td #{item.name}
+            td #{item.description}
+            td #{item.price} تومان
+            td
+              form(action='/workbench/delete/'+item._id method='post')
+                .row
+                  .col-md-3.mt-1
+                    a.menuitem.p-2.btn-sm(href='/workbench/show/'+ item._id) نمایش
+                  .col-md-2
+                    button.btn-danger.btn-sm.linkbutton(type='submit' style="width: 50px;") حذف
+        else
+          tbody
+            tr 
+              td هیچ محصولی یافت نشد!
+              td هیچ محصولی یافت نشد!
+              td هیچ محصولی یافت نشد!
+              td هیچ محصولی یافت نشد!
+    .row
+      .col-md-6.text-center
+        a.btn.btn-success.mt-5(href="/workbench/create") ایجاد محصول جدید
+
+
+//-     extends ../../../layout
+//- block append script
+//- block content
+//-   .container
+//-     h2.text-info.text-center بیل مکانیکی های هیوندای
+//-     .row.mt-5.p-4
+//-       p.text-right.mt-5 جایگاه بیل مکانیکی های هیوندای در بازار ایران
+//-     .row
+//-       ul#products
+//-         each item in products
+//-           li
+//-             a#producta #{item.name}
+//-     a.btn.btn-primary(href="/rahsazimadani/excavator/hundai/create") ایجاد محصول جدید

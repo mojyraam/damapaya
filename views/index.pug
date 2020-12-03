@@ -1,0 +1,141 @@
+extends layout1
+block append script
+block content
+  if (user === 1)
+    //- .row.text-center
+    //-   p.welcome کاربر گرامی خوش آمدید
+    //- .row
+    //-   .col-md-1
+    //-     .user
+    //-       img#user(src='/images/user.png')
+    //-       .userform.dropdown-menu
+    //-         ul#loginlist
+    //-           li.p-2
+    //-             .row
+    //-               .col-md-3
+    //-                 a.btn.btn-success(href='/users/logout') خروج
+    //-           li.p-2
+    //-             .row
+    //-               .col-md-3
+    //-                 a.btn.btn-success(href='/transaction/index') خرید
+    //-       script.
+    //-         console.log(!{JSON.stringify(admin)})
+    .row.mt-3
+      .col-md-2
+      .col-md-8
+        p.welcome.text-center.mt-1 کاربر گرامی خوش آمدید
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/logout') خروج
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/transaction/index') وضعیت سفارشات
+  else if (user === 2)
+    //- .row.text-center
+    //-   p.welcome مدیر گرامی خوش آمدید
+    //- .row
+    //-   .col-md-1
+    //-     .user
+    //-       img#user(src='/images/user.png')
+    //-       .userform.dropdown-menu
+    //-         ul#loginlist
+    //-           li.mt-2.mb-2
+    //-             .row
+    //-               .col-md-3
+    //-                 a.btn.menuitem(href='/workbench/main') کارتابل
+    //-           li.p-2
+    //-             .row
+    //-               .col-md-3
+    //-                 a.btn.menuitem(href='/users/logout') خروج
+    //-       script.
+    //-         console.log(!{JSON.stringify(admin)})
+    .row.mt-3
+      .col-md-2
+      .col-md-8
+        p.welcome.text-center.mt-1 مدیر گرامی خوش آمدید
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/workbench/main') کارتابل
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/logout') خروج
+  else
+    //- .row.text-center
+    //-   .col-md-1
+    //-     .user
+    //-       img#user(src='/images/user.png')
+    //-       .userform.dropdown-menu
+    //-         ul#loginlist
+    //-           .row
+    //-             li
+    //-                 .col-md-1
+    //-                   a.btn.btn-info(href='/users/login') ورود
+    //-             li
+    //-                 .col-md-1
+    //-                   a.btn.btn-info(href='/users/register') ایجاد
+    .row.mt-3
+      .col-md-2
+      .col-md-8
+        p.welcome.text-center.mt-1 میهمان گرامی خوش آمدید
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/login') ورود
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/register') ایجاد حساب کاربری
+    if success_msg != null
+      each item in success_msg
+        .alert.alert-success.alert-dismissible.fade.show(role='alert')
+          p(style='text-align: center;') #{item}
+          button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;
+    if error_msg != null
+      each item in error_msg
+        .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+          p(style='text-align: center;') #{item}
+          button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;
+    if error != null
+      each item in error
+        .alert.alert-warning.alert-dismissible.fade.show(role='alert')
+          p(style='text-align: center;') #{item}
+          button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;
+  .container(style="background-color: gray;")
+    #demo.carousel.slide(data-ride='carousel')
+      // Indicators
+      ul.carousel-indicators
+        li.active(data-target='#demo' data-slide-to='0')
+        li(data-target='#demo' data-slide-to='1')
+        li(data-target='#demo' data-slide-to='2')
+      // The slideshow
+      .carousel-inner
+        .carousel-item.active
+          #carousel1
+            .row
+              br
+              .col-md-3
+                p.bg-info.text-white.text-center محل نمایش اسلاید اول
+        .carousel-item
+          #carousel2
+            .row
+              br
+              .col-md-3
+                p.bg-info.text-white.text-center محل نمایش اسلاید دوم
+        .carousel-item
+          #carousel3
+            .row
+              br
+              .col-md-3
+                p.bg-info.text-white.text-center محل نمایش اسلاید سوم
+      // Left and right controls
+      a.carousel-control-prev(href='#demo' data-slide='prev')
+        span.carousel-control-prev-icon
+      a.carousel-control-next(href='#demo' data-slide='next')
+        span.carousel-control-next-icon
+  br
+  .container
+    ul#products
+      //- div.p-4.bg-success.rellax(data-rellax-speed='-4')
+      //-   a#producta(href='/branches/a') ماشین آلات راهسازی و معدنی
+      //- br
+      //- div.p-4.bg-success.rellax(data-rellax-speed='2')
+      //-   a#productb(href='/branches/b') ماشین آلات حمل و نقل جاده ای و ترابری
+      //- br
+      //- div.p-4.bg-success.rellax(data-rellax-speed='7')
+      //-   a#productc(href='/branches/c') دیزل ژنراتور (مولد برق)
+      //- a#productd(href='/product/d') کمپرسور
+      a#producta(href='/branches/a') ماشین آلات راهسازی و معدنی
+      a#productb(href='/branches/b') ماشین آلات حمل و نقل جاده ای و ترابری
+      a#productc(href='/branches/c') دیزل ژنراتور (مولد برق)
+      a#productd(href='/product/d') کمپرسور
+  //- script.
+  //-   var rellax = new Rellax('.rellax');
