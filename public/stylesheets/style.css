@@ -12,21 +12,16 @@ body {
 }
 
 a {
-  color: #2195c4;
+  color: #8d8d8d;
+  text-decoration: none !important;
+}
+
+.mba:hover {
+  background-color: rgb(196, 236, 255) !important;
 }
 
 p {
   color: gray;
-}
-
-.navbar {
-  margin-top: 2%;
-  user-select: none;
-  width: 90%;
-  margin-left: 5%;
-  background-color: rgb(234, 202, 84);
-  border-radius: 7px;
-  border: 2px solid rgb(248, 151, 151);
 }
 
 .navlink {
@@ -396,4 +391,26 @@ img#user:hover {
   -ms-transform: scale(1.1) !important; /* IE 9 */
   -webkit-transform: scale(1.1) !important; /* Safari 3-8 */
   transform: scale(1.1) !important;
+}
+
+@media (min-width: 600px) {
+  /* .text {
+    font-size: 1.1em;
+  } */
+  #mobile {
+    visibility: hidden;
+  }  
+  #web {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  #web {
+    visibility: hidden;
+  }
+  #mobile {
+    visibility: visible;
+    margin-top: -12em;
+  }
 }

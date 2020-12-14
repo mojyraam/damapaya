@@ -66,6 +66,22 @@ head
 			right: 0; 
 			margin: auto; 
 		}
+	style.
+		| .dropdown-submenu{position: relative;}
+		| .dropdown-submenu .caret{-webkit-transform: rotate(-90deg); transform: rotate(-90deg);}
+		| .dropdown-submenu > .dropdown-menu {top:0; left:100%; margin-top:-6px; margin-left:-1px;}
+		| .dropdown-submenu.open > a:after{border-left-color:#fff;}
+		| .dropdown-submenu.open > .dropdown-menu, .dropdown-submenu.open > .dropdown-menu {display: block;}
+		| .dropdown-submenu .dropdown-menu{margin-bottom: 8px;}
+		| .navbar-default .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color: #f6f6f6;}
+		| .navbar-inverse .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#333;}
+		| .navbar .navbar-nav .open .dropdown-submenu .dropdown-menu > li > a{padding-left: 30px;}
+		| @media screen and (min-width:992px){
+		| .dropdown-submenu .dropdown-menu{margin-bottom: 2px;}
+		| .navbar .navbar-nav .open .dropdown-submenu .dropdown-menu > li > a{padding-left: 25px;}
+		| .navbar-default .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#fff;}
+		| .navbar-inverse .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#fff;}
+		| }
 	link(rel='stylesheet', href='/stylesheets/style.css')
 	link(rel="stylesheet", href='/stylesheets/bootstrap.min.css')
 	//link(rel="stylesheet", href='/stylesheets/dataTables.bootstrap.min.css')
@@ -90,7 +106,7 @@ body
 	.page
 		.header
 			.header-menu.mt-2.mb-4
-				.container
+				#web.container
 					nav#menu
 						a(href='/' style='background-image: url(images/logo.png)')
 						ul
@@ -247,7 +263,7 @@ body
 								//- 				a(href='#') Link
 							li.SubmenuTabs.IconHidden
 								a(href='/')
-									i.fas.fa-home
+									i.fas.fa-cogs
 									|  دسته بندی محصولات
 								ul.text-right(style="direction: ltr;")
 									li.SubmenuMega
@@ -444,6 +460,38 @@ body
 													//- br
 													//- div.p-4.bg-success.rellax(data-rellax-speed='2')
 													//- 	p hi
+				#mobile.col-sm-4(style="font-size: 0.7rem;")
+					nav.navbar.navbar-inverse.navbar-fixed-top.containereditdetail.mt-4
+						.navbar-header
+							button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#bs-navbar-collapse-1' aria-expanded='false' style="border: 1px gray solid; border-radius: 5px;") منو
+						#bs-navbar-collapse-1.collapse.navbar-collapse.ml-5
+							ul.nav.navbar-nav.text-right.ml-5
+								li
+									a.mba(href='index.php') صفحه اصلی
+								li.dropdown
+									a.mba.dropdown-toggle(href='#' data-toggle='dropdown' role='button')
+										| سیستم های تهویه مطبوع 
+										span.caret
+									ul.dropdown-menu.ml-5.bg-white.w-100.pr-3(style="font-size: 0.7rem;")
+										li
+											a.mba(href='#') کولر گازی
+										li
+											a.mba(href='#') داکت اسپلیت
+										//- li.dropdown-submenu
+										//- 	a.dropdown-submenu-toggle(tabindex='-1' href='#')
+										//- 		| Second Dropdown 
+										//- 		b.caret
+										//- 	ul.dropdown-menu
+										//- 		li
+										//- 			a(href='#') Sub-Menu Item
+										//- 		li
+										//- 			a(href='#') Sub-Menu Item
+										//- 		li
+										//- 			a(href='#') Sub-Menu Item
+										li
+											a(href='#') Menu Item
+										li
+											a(href='#') Menu Item
 					script.
 						$(function() {
 						$(window).resize();
