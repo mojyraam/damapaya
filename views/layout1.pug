@@ -461,10 +461,10 @@ body
 													//- div.p-4.bg-success.rellax(data-rellax-speed='2')
 													//- 	p hi
 				#mobile.col-sm-4(style="font-size: 0.7rem;")
-					nav.navbar.navbar-inverse.navbar-fixed-top.containereditdetail.mt-4
+					nav.navbar.navbar-inverse.navbar-fixed-top.mt-4
 						.navbar-header
-							button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#bs-navbar-collapse-1' aria-expanded='false' style="border: 1px gray solid; border-radius: 5px;") منو
-						#bs-navbar-collapse-1.collapse.navbar-collapse.ml-5
+							button.btn.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#bs-navbar-collapse-1' aria-expanded='false' style="border: 1px gray solid; border-radius: 5px; color: gray; font-size: 0.7rem; margin: 0.5em;") منو
+						#bs-navbar-collapse-1.collapse.navbar-collapse.ml-5.bg-white.rounded
 							ul.nav.navbar-nav.text-right.ml-5
 								li
 									a.mba(href='index.php') صفحه اصلی
@@ -472,7 +472,7 @@ body
 									a.mba.dropdown-toggle(href='#' data-toggle='dropdown' role='button')
 										| سیستم های تهویه مطبوع 
 										span.caret
-									ul.dropdown-menu.ml-5.bg-white.w-100.pr-3(style="font-size: 0.7rem;")
+									ul.dropdown-menu.ml-5.bg-white.w-100.pr-3(style="font-size: 0.7rem; border: solid 1px white;")
 										li
 											a.mba(href='#') کولر گازی
 										li
@@ -488,10 +488,10 @@ body
 										//- 			a(href='#') Sub-Menu Item
 										//- 		li
 										//- 			a(href='#') Sub-Menu Item
-										li
-											a(href='#') Menu Item
-										li
-											a(href='#') Menu Item
+										//- li
+										//- 	a(href='#') Menu Item
+										//- li
+										//- 	a(href='#') Menu Item
 					script.
 						$(function() {
 						$(window).resize();

@@ -65,7 +65,7 @@ block content
     //-             li
     //-                 .col-md-1
     //-                   a.btn.btn-info(href='/users/register') ایجاد
-    .row.mt-3(style="margin: 0px !important;")
+    .row.mt-3.bg-white.rounded(style="margin: 0px !important;")
       .col-md-2
       .col-md-7
         p.welcome.text-center.mt-1 میهمان گرامی خوش آمدید
@@ -89,38 +89,37 @@ block content
           p(style='text-align: center;') #{item}
           button.close(type='button' data-dismiss='alert' aria-label='Close')
             span(aria-hidden='true') &times;
-  .container
-    #demo.carousel.slide(data-ride='carousel')
-      // Indicators
-      ul.carousel-indicators
-        li.active(data-target='#demo' data-slide-to='0')
-        li(data-target='#demo' data-slide-to='1')
-        li(data-target='#demo' data-slide-to='2')
-      // The slideshow
-      .carousel-inner
-        .carousel-item.active
-          #carousel1
-            //- .row
-            //-   br
-            //-   .col-md-3
-            //-     p.bg-info.text-white.text-center محل نمایش اسلاید اول
-        .carousel-item
-          #carousel2
-            //- .row
-            //-   br
-            //-   .col-md-3
-            //-     p.bg-info.text-white.text-center محل نمایش اسلاید دوم
-        //- .carousel-item
-        //-   #carousel3
-        //-     .row
-        //-       br
-        //-       .col-md-3
-        //-         p.bg-info.text-white.text-center محل نمایش اسلاید سوم
-      // Left and right controls
-      a.carousel-control-prev(href='#demo' data-slide='prev')
-        span.carousel-control-prev-icon
-      a.carousel-control-next(href='#demo' data-slide='next')
-        span.carousel-control-next-icon
+  #demo.carousel.slide.container.mt-2(data-ride='carousel')
+    // Indicators
+    ul.carousel-indicators
+      li.active(data-target='#demo' data-slide-to='0')
+      li(data-target='#demo' data-slide-to='1')
+      li(data-target='#demo' data-slide-to='2')
+    // The slideshow
+    .carousel-inner
+      .carousel-item.active
+        #carousel1
+          //- .row
+          //-   br
+          //-   .col-md-3
+          //-     p.bg-info.text-white.text-center محل نمایش اسلاید اول
+      .carousel-item
+        #carousel2
+          //- .row
+          //-   br
+          //-   .col-md-3
+          //-     p.bg-info.text-white.text-center محل نمایش اسلاید دوم
+      //- .carousel-item
+      //-   #carousel3
+      //-     .row
+      //-       br
+      //-       .col-md-3
+      //-         p.bg-info.text-white.text-center محل نمایش اسلاید سوم
+    // Left and right controls
+    a.carousel-control-prev(href='#demo' data-slide='prev')
+      span.carousel-control-prev-icon
+    a.carousel-control-next(href='#demo' data-slide='next')
+      span.carousel-control-next-icon
   br
   .container
     ul#products
