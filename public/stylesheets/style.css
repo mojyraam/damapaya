@@ -194,29 +194,29 @@ td, th {
 }
 
 #carousel1 {
-  background-image: url(/images/slide1.jpg);
+  background-image: url(/images/slide2.png);
   background-blend-mode: lighten;
   background-size: cover;
   background-color: rgba(255, 247, 220, 0.1);
   margin: auto;
   border-radius: 5px;
-  width: 1200px;
-  height: 500px;
+  width: 1450px;
+  height: 400px;
 }
 
 #carousel2 {
-  background-image: url(/images/slide1.jpg);
+  background-image: url(/images/slide2.png);
   background-blend-mode: lighten;
   background-size: cover;
   background-color: rgba(255, 247, 220, 0.1);
   margin: auto;
   border-radius: 5px;
-  width: 1200px;
-  height: 500px;
+  width: 1300px;
+  height: 400px;
 }
 
 #carousel3 {
-  background-image: url(/images/slide1.jpg);
+  background-image: url(/images/slide2.png);
   background-blend-mode: lighten;
   background-size: cover;
   background-color: rgba(255, 247, 220, 0.1);
@@ -283,7 +283,7 @@ img#user:hover {
 }
 
 #producta {
-  background-image: url(/images/excavator.png);
+  background-image: url(/images/slide.jpg);
   background-blend-mode: lighten;
   background-color: rgba(249, 255, 220, 0.7);
   background-size: cover;

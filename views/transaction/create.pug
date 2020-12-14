@@ -2,6 +2,7 @@ extends ../layout1
 block append script
 	script(src='./javascripts/transaction.js')
 	script(src='./javascripts/onlynumber.js')
+	script(src='./javascripts/counter.js')
 block content
 	.container
 		form(method='POST' action='/transaction/save')
@@ -29,7 +30,7 @@ block content
 						span.carousel-control-next-icon
 			.containerinfo.text-center
 				p.text-center.text-danger مشخصات اصلی محصول
-				.containeredit.mr-5
+				.containeredit
 					.row.text-center.mt-4
 						.col-md-3.pr-5
 							label(for="name") نام محصول:
@@ -48,135 +49,96 @@ block content
 						.col-md-6.pr-5
 							p#description.text-info.bg-white #{product.description}
 			br
-			.containerinfo.text-center
-				.row
-					.col-md-12
-						p.text-danger لیست قیمت قطعات (تومان)
-				.row
-					.col-md-12
-						table#info.table.table-striped.table-responsive
-							thead
-								tr
-									th بلوک سیلندر
-									th سیلندر
-									th سر سیلندر
-									th میل لنگ
-									th میل سوپاپ
-									th بوش
-									th رینگ
-									th یاطاقان
-									th سوپاپ
-									th سیت
-									th گیت
-									th واتر پمپ
-									th اویل پمپ
-									th واشر کامل
-									th واشر سر سیلندر
-									th واشر کارتل
-									th اسبک دود و هوا
-
-							tbody
-								tr
-									td#blocksilandrinfo #{product.blocksilandr}
-									td#silandrinfo #{product.silandr}
-									td#sarsilandrinfo #{product.sarsilandr}
-									td#millanginfo #{product.millang}
-									td#milsupapinfo #{product.milsupap}
-									td#bushinfo #{product.bush}									
-									td#ringinfo #{product.ring}
-									td#yataghaninfo #{product.yataghan}
-									td#supapinfo #{product.supap}
-									td#seatinfo #{product.seat}
-									td#gateinfo #{product.gate}
-									td#waterpompinfo #{product.waterpomp}
-									td#oilpompinfo #{product.oilpomp}	
-									td#washerkamelinfo #{product.washerkamel}
-									td#washersarsilandrinfo #{product.washersarsilandr}
-									td#washerkartelinfo #{product.washerkartel}
-									td#asbakdudohavainfo #{product.asbakdudohava}
 			if (user)
 				br
-				p.text-info.text-center لطفا در صورت تمایل به سفارش، تعداد قطعات را به صورت عددی وارد نمایید
+				p.text-info.text-center لطفا در صورت تمایل به سفارش، تعداد محصول مورد نظر را وارد نمایید
+				br
+				.row.text-center.mr-5
+					.col-md-5.mr-2
+					.col-md-1.mr-2
+						#increase.value-button(onclick='increaseValue()' value='Increase Value' style="cursor:pointer; user-select:none; border:solid 1px gray; border-radius:10px; background-color:gray; color:white;") +
+						input#number.form-control(type='number' value='0')
+						#decrease.value-button(onclick='decreaseValue()' value='Decrease Value' style="cursor:pointer; user-select:none; border:solid 1px gray; border-radius:10px; background-color:gray; color:white;") -
 				br
 				.containerinfo
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="blocksilandr") بلوک سیلندر:
-						.col-md-3.pl-5
-							input#blocksilandr.form-control.payel(type="text" name="blocksilandr" maxlength="3" onkeypress="return isNumber(event)")
-						.col-md-3.pr-5
-							label(for="silandr") سیلندر:
-						.col-md-3.pl-5
-							input#silandr.form-control.payel(type="text" name="silandr" maxlength="3" onkeypress="return isNumber(event)")
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="sarsilandr") سر سیلندر:
-						.col-md-3.pl-5
-							input#sarsilandr.form-control.payel(type="text" name="sarsilandr" maxlength="3" onkeypress="return isNumber(event)")
-						.col-md-3.pr-5
-							label(for="millang") میل لنگ:
-						.col-md-3.pl-5
-							input#millang.form-control.payel(type="text" name="millang" maxlength="3" onkeypress="return isNumber(event)")
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="milsupap") میل سوپاپ:
-						.col-md-3.pl-5
-							input#milsupap.form-control.payel(type="text" name="milsupap" maxlength="3" onkeypress="return isNumber(event)")
-						.col-md-3.pr-5
-							label(for="bush") بوش:
-						.col-md-3.pl-5
-							input#bush.form-control.payel(type="text" name="bush" maxlength="3" onkeypress="return isNumber(event)")
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="ring") رینگ:
-						.col-md-3.pl-5
-							input#ring.form-control.payel(type="text" name="ring" maxlength="3" onkeypress="return isNumber(event)")
-						.col-md-3.pr-5
-							label(for="yataghan") یاطاقان:
-						.col-md-3.pl-5
-							input#yataghan.form-control.payel(type="text" name="yataghan" maxlength="3" onkeypress="return isNumber(event)")
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="supap") سوپاپ:
-						.col-md-3.pl-5
-							input#supap.form-control.payel(type="text" name="supap" maxlength="3" onkeypress="return isNumber(event)")
-						.col-md-3.pr-5
-							label(for="seat") سیت:
-						.col-md-3.pl-5
-							input#seat.form-control.payel(type="text" name="seat" maxlength="3" onkeypress="return isNumber(event)")
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="gate") گیت:
-						.col-md-3.pl-5
-							input#gate.form-control.payel(type="text" name="gate" maxlength="3" onkeypress="return isNumber(event)")
-						.col-md-3.pr-5
-							label(for="waterpomp") واتر پمپ:
-						.col-md-3.pl-5
-							input#waterpomp.form-control.payel(type="text" name="waterpomp" maxlength="3" onkeypress="return isNumber(event)")
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="oilpomp") اویل پمپ:
-						.col-md-3.pl-5
-							input#oilpomp.form-control.payel(type="text" name="oilpomp" maxlength="3" onkeypress="return isNumber(event)")
-						.col-md-3.pr-5
-							label(for="washerkamel") واشر کامل:
-						.col-md-3.pl-5
-							input#washerkamel.form-control.payel(type="text" name="washerkamel" maxlength="3" onkeypress="return isNumber(event)")
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="washersarsilandr") واشر سر سیلندر:
-						.col-md-3.pl-5
-							input#washersarsilandr.form-control.payel(type="text" name="washersarsilandr" maxlength="3" onkeypress="return isNumber(event)")
-						.col-md-3.pr-5
-							label(for="washercartel") واشر کارتل:
-						.col-md-3.pl-5
-							input#washerkartel.form-control.payel(type="text" name="washerkartel" maxlength="3" onkeypress="return isNumber(event)")
-					.row.mt-4.mb-4
-						.col-md-3.pr-5
-							label(for="asbakdudohava") اسبک دود و هوا:
-						.col-md-3.pl-5
-							input#asbakdudohava.form-control.payel(type="text" name="asbakdudohava" maxlength="3" onkeypress="return isNumber(event)")
-					.containeredit.mr-5
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="blocksilandr") بلوک سیلندر:
+					//- 	.col-md-3.pl-5
+					//- 		input#blocksilandr.form-control.payel(type="text" name="blocksilandr" maxlength="3" onkeypress="return isNumber(event)")
+					//- 	.col-md-3.pr-5
+					//- 		label(for="silandr") سیلندر:
+					//- 	.col-md-3.pl-5
+					//- 		input#silandr.form-control.payel(type="text" name="silandr" maxlength="3" onkeypress="return isNumber(event)")
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="sarsilandr") سر سیلندر:
+					//- 	.col-md-3.pl-5
+					//- 		input#sarsilandr.form-control.payel(type="text" name="sarsilandr" maxlength="3" onkeypress="return isNumber(event)")
+					//- 	.col-md-3.pr-5
+					//- 		label(for="millang") میل لنگ:
+					//- 	.col-md-3.pl-5
+					//- 		input#millang.form-control.payel(type="text" name="millang" maxlength="3" onkeypress="return isNumber(event)")
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="milsupap") میل سوپاپ:
+					//- 	.col-md-3.pl-5
+					//- 		input#milsupap.form-control.payel(type="text" name="milsupap" maxlength="3" onkeypress="return isNumber(event)")
+					//- 	.col-md-3.pr-5
+					//- 		label(for="bush") بوش:
+					//- 	.col-md-3.pl-5
+					//- 		input#bush.form-control.payel(type="text" name="bush" maxlength="3" onkeypress="return isNumber(event)")
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="ring") رینگ:
+					//- 	.col-md-3.pl-5
+					//- 		input#ring.form-control.payel(type="text" name="ring" maxlength="3" onkeypress="return isNumber(event)")
+					//- 	.col-md-3.pr-5
+					//- 		label(for="yataghan") یاطاقان:
+					//- 	.col-md-3.pl-5
+					//- 		input#yataghan.form-control.payel(type="text" name="yataghan" maxlength="3" onkeypress="return isNumber(event)")
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="supap") سوپاپ:
+					//- 	.col-md-3.pl-5
+					//- 		input#supap.form-control.payel(type="text" name="supap" maxlength="3" onkeypress="return isNumber(event)")
+					//- 	.col-md-3.pr-5
+					//- 		label(for="seat") سیت:
+					//- 	.col-md-3.pl-5
+					//- 		input#seat.form-control.payel(type="text" name="seat" maxlength="3" onkeypress="return isNumber(event)")
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="gate") گیت:
+					//- 	.col-md-3.pl-5
+					//- 		input#gate.form-control.payel(type="text" name="gate" maxlength="3" onkeypress="return isNumber(event)")
+					//- 	.col-md-3.pr-5
+					//- 		label(for="waterpomp") واتر پمپ:
+					//- 	.col-md-3.pl-5
+					//- 		input#waterpomp.form-control.payel(type="text" name="waterpomp" maxlength="3" onkeypress="return isNumber(event)")
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="oilpomp") اویل پمپ:
+					//- 	.col-md-3.pl-5
+					//- 		input#oilpomp.form-control.payel(type="text" name="oilpomp" maxlength="3" onkeypress="return isNumber(event)")
+					//- 	.col-md-3.pr-5
+					//- 		label(for="washerkamel") واشر کامل:
+					//- 	.col-md-3.pl-5
+					//- 		input#washerkamel.form-control.payel(type="text" name="washerkamel" maxlength="3" onkeypress="return isNumber(event)")
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="washersarsilandr") واشر سر سیلندر:
+					//- 	.col-md-3.pl-5
+					//- 		input#washersarsilandr.form-control.payel(type="text" name="washersarsilandr" maxlength="3" onkeypress="return isNumber(event)")
+					//- 	.col-md-3.pr-5
+					//- 		label(for="washercartel") واشر کارتل:
+					//- 	.col-md-3.pl-5
+					//- 		input#washerkartel.form-control.payel(type="text" name="washerkartel" maxlength="3" onkeypress="return isNumber(event)")
+					//- .row.mt-4.mb-4
+					//- 	.col-md-3.pr-5
+					//- 		label(for="asbakdudohava") اسبک دود و هوا:
+					//- 	.col-md-3.pl-5
+					//- 		input#asbakdudohava.form-control.payel(type="text" name="asbakdudohava" maxlength="3" onkeypress="return isNumber(event)")
+					.containeredit
 						p.text-danger.text-center مشخصات سفارش دهنده
 						.row.text-center.mt-4
 							.col-md-3.pr-5
@@ -221,4 +183,6 @@ block content
 					//- script.
 					//- 	console.log(!{JSON.stringify(product)})
 			else
-				p.text-center.text-danger.mt-4 لطفا جهت سفارش قطعات وارد حساب کاربری خود شوید
+				.text-center
+					p.text-danger.mt-4 لطفا جهت سفارش قطعات وارد حساب کاربری خود شوید
+					a.text-success.mt-4(href='/users/login') ورود

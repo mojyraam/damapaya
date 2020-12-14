@@ -12,7 +12,7 @@ var passport = require('passport');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/disel', {
+mongoose.connect('mongodb://localhost/damapaya', {
     useNewUrlParser: true, 
     useFindAndModify: false,
     useUnifiedTopology: true

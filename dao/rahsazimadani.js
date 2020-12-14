@@ -1,4 +1,4 @@
-var Disel = require('../models/Disel')
+var Disel = require('../models/Product')
 
 exports.findAll = (prod) => {
     Disel.find({}).exec(prod)
@@ -12,30 +12,29 @@ exports.save = (data) => {
     var disel = new Disel({
         name: data[0],
         productbranch: data[1],
-        description: data[2],
-        blocksilandr: data[3],
-        silandr: data[4],
-        sarsilandr: data[5],
-        millang: data[6],
-        milsupap: data[7],
-        bush: data[8],
-        ring: data[9],
-        yataghan: data[10],
-        supap: data[11],
-        seat: data[12],
-        gate: data[13],
-        waterpomp: data[14],
-        oilpomp: data[15],
-        washerkamel: data[16],
-        washersarsilandr: data[17],
-        washerkartel: data[18],
-        asbakdudohava: data[19],
-        productcode: data[20],
-        imagea: data[21],
-        imageb: data[22],
-        imagec: data[23],
-        imaged: data[24],
-        imagee: data[25]
+        producttype: data[2],
+        description: data[3],
+        specifications1: data[4],
+        specifications2: data[5],
+        specifications3: data[6],
+        specifications4: data[7],
+        specifications5: data[8],
+        specifications6: data[9],
+        specifications7: data[10],
+        specifications8: data[11],
+        specifications9: data[12],
+        specifications10: data[13],
+        specifications11: data[14],
+        specifications12: data[15],
+        specifications13: data[16],
+        specifications14: data[17],
+        specifications15: data[18],
+        producttype: data[19],
+        imagea: data[20],
+        imageb: data[21],
+        imagec: data[22],
+        imaged: data[23],
+        imagee: data[24]
     })
     disel.save()
 }
@@ -50,35 +49,40 @@ exports.update = (data) => {
             {
                 name: data[1],
                 productbranch: data[2],
-                description: data[3],
-                blocksilandr: data[4],
-                silandr: data[5],
-                sarsilandr: data[6],
-                millang: data[7],
-                milsupap: data[8],
-                bush: data[9],
-                ring: data[10],
-                yataghan: data[11],
-                supap: data[12],
-                seat: data[13],
-                gate: data[14],
-                waterpomp: data[15],
-                oilpomp: data[16],
-                washerkamel: data[17],
-                washersarsilandr: data[18],
-                washerkartel: data[19],
-                asbakdudohava: data[20],
-                productcode: data[21],
-                imagea: data[22],
-                imageb: data[23],
-                imagec: data[24],
-                imaged: data[25],
-                imagee: data[26]
+                producttype: data[3],
+                description: data[4],
+                specifications1: data[5],
+                specifications1: data[6],
+                specifications1: data[7],
+                specifications1: data[8],
+                specifications1: data[9],
+                specifications1: data[10],
+                specifications1: data[11],
+                specifications1: data[12],
+                specifications1: data[13],
+                specifications1: data[14],
+                specifications1: data[15],
+                specifications1: data[16],
+                specifications1: data[17],
+                specifications1: data[18],
+                specifications1: data[19],
+                imagea: data[20],
+                imageb: data[21],
+                imagec: data[22],
+                imaged: data[23],
+                imagee: data[24]
             }
         },
     { new: true }).exec()
 }
 
 exports.delete = (id) => {
-    Disel.deleteOne({ _id: id }).exec()
+    //Disel.deleteOne({ _id: id }).exec()
+    Disel.findByIdAndUpdate({ _id: data[0] },
+        { $set: 
+            {
+                producttype: 0
+            }
+        },
+    { new: true }).exec()
 }

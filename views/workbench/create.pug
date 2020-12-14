@@ -1,7 +1,5 @@
 extends ../layout1
 block append script
-    script(src='./javascripts/comma.js')
-    script(src='./javascripts/onlynumber.js')
 block content
     .container
         form(method='POST' action='/workbench/save')
@@ -46,6 +44,11 @@ block content
                         label(for="imagee") عکس پنجم:
                     .col-md-3.pl-5
                         input#imagea.form-control(name="imagee" required="is required" oninvalid="this.setCustomValidity('ورود کد عکس پنجم الزامی است')" oninput="setCustomValidity('')" maxlength="50")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="producttype") وضعیت محصول:
+                    .col-md-3.pl-5
+                        input#producttype.form-control(name="producttype" required="is required" oninvalid="this.setCustomValidity('ورود کد عکس چهارم الزامی است')" oninput="setCustomValidity('')" maxlength="50")
                 .row.mt-2.mb-2
                     .col-md-3.pr-5
                         label(for="description") توضیحات:
@@ -56,81 +59,72 @@ block content
                 p.text-danger.text-center قیمت قطعات
                 .row.mt-4.mb-4
                     .col-md-3.pr-5
-                        label(for="blocksilandr") بلوک سیلندر:
+                        label(for="specifications1") ویژگی 1:
                     .col-md-3.pl-5
-                        input#blocksilandr.form-control(type="text" name="blocksilandr" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications1.form-control(type="text" name="specifications1" maxlength="50" onkeypress="return isNumber(event)")
                     .col-md-3.pr-5
-                        label(for="silandr") سیلندر:
+                        label(for="specifications2") ویژگی 2:
                     .col-md-3.pl-5
-                        input#silandr.form-control(type="text" name="silandr" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications2.form-control(type="text" name="specifications2" maxlength="50" onkeypress="return isNumber(event)")
                 .row.mt-4.mb-4
                     .col-md-3.pr-5
-                        label(for="sarsilandr") سر سیلندر:
+                        label(for="specifications3") ویژگی 3:
                     .col-md-3.pl-5
-                        input#sarsilandr.form-control(type="text" name="sarsilandr" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications3.form-control(type="text" name="specifications3" maxlength="50" onkeypress="return isNumber(event)")
                     .col-md-3.pr-5
-                        label(for="millang") میل لنگ:
+                        label(for="specifications4") ویژگی 4:
                     .col-md-3.pl-5
-                        input#millang.form-control(type="text" name="millang" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications4.form-control(type="text" name="specifications4" maxlength="50" onkeypress="return isNumber(event)")
                 .row.mt-4.mb-4
                     .col-md-3.pr-5
-                        label(for="milsupap") میل سوپاپ:
+                        label(for="specifications5") ویژگی 5:
                     .col-md-3.pl-5
-                        input#milsupap.form-control(type="text" name="milsupap" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications5.form-control(type="text" name="specifications5" maxlength="50" onkeypress="return isNumber(event)")
                     .col-md-3.pr-5
-                        label(for="bush") بوش:
+                        label(for="specifications6") ویژگی 6:
                     .col-md-3.pl-5
-                        input#bush.form-control(type="text" name="bush" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications6.form-control(type="text" name="specifications6" maxlength="50" onkeypress="return isNumber(event)")
                 .row.mt-4.mb-4
                     .col-md-3.pr-5
-                        label(for="ring") رینگ:
+                        label(for="specifications7") ویژگی 7:
                     .col-md-3.pl-5
-                        input#ring.form-control(type="text" name="ring" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications7.form-control(type="text" name="specifications7" maxlength="50" onkeypress="return isNumber(event)")
                     .col-md-3.pr-5
-                        label(for="yataghan") یاطاقان:
+                        label(for="specifications8") ویژگی 8:
                     .col-md-3.pl-5
-                        input#yataghan.form-control(type="text" name="yataghan" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications8.form-control(type="text" name="specifications8" maxlength="50" onkeypress="return isNumber(event)")
                 .row.mt-4.mb-4
                     .col-md-3.pr-5
-                        label(for="supap") سوپاپ:
+                        label(for="specifications9") ویژگی 9:
                     .col-md-3.pl-5
-                        input#supap.form-control(type="text" name="supap" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications9.form-control(type="text" name="specifications9" maxlength="50" onkeypress="return isNumber(event)")
                     .col-md-3.pr-5
-                        label(for="seat") سیت:
+                        label(for="specifications10") ویژگی 10:
                     .col-md-3.pl-5
-                        input#seat.form-control(type="text" name="seat" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications10.form-control(type="text" name="specifications10" maxlength="50" onkeypress="return isNumber(event)")
                 .row.mt-4.mb-4
                     .col-md-3.pr-5
-                        label(for="gate") گیت:
+                        label(for="specifications11") ویژگی 11:
                     .col-md-3.pl-5
-                        input#gate.form-control(type="text" name="gate" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications11.form-control(type="text" name="specifications11" maxlength="50" onkeypress="return isNumber(event)")
                     .col-md-3.pr-5
-                        label(for="waterpomp") واترپمپ:
+                        label(for="specifications12") ویژگی 12:
                     .col-md-3.pl-5
-                        input#waterpomp.form-control(type="text" name="waterpomp" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications12.form-control(type="text" name="specifications12" maxlength="50" onkeypress="return isNumber(event)")
                 .row.mt-4.mb-4
                     .col-md-3.pr-5
-                        label(for="oilpomp") اویل پمپ:
+                        label(for="specifications13") ویژگی 13:
                     .col-md-3.pl-5
-                        input#oilpomp.form-control(type="text" name="oilpomp" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications13.form-control(type="text" name="specifications13" maxlength="50" onkeypress="return isNumber(event)")
                     .col-md-3.pr-5
-                        label(for="washerkamel") واشر کامل:
+                        label(for="specifications14") ویژگی 14:
                     .col-md-3.pl-5
-                        input#washerkamel.form-control(type="text" name="washerkamel" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications14.form-control(type="text" name="specifications14" maxlength="50" onkeypress="return isNumber(event)")
                 .row.mt-4.mb-4
                     .col-md-3.pr-5
-                        label(for="washersarsilandr") واشر سر سیلندر:
+                        label(for="specifications15") ویژگی 15:
                     .col-md-3.pl-5
-                        input#washersarsilandr.form-control(type="text" name="washersarsilandr" maxlength="50" onkeypress="return isNumber(event)")
-                    .col-md-3.pr-5
-                        label(for="washerkartel") واشر کارتل:
-                    .col-md-3.pl-5
-                        input#washerkartel.form-control(type="text" name="washerkartel" maxlength="50" onkeypress="return isNumber(event)")
-                .row.mt-4.mb-4
-                    .col-md-3.pr-5
-                        label(for="asbakdudohava") اسبک دود و هوا:
-                    .col-md-3.pl-5
-                        input#asbakdudohava.form-control(type="text" name="asbakdudohava" maxlength="50" onkeypress="return isNumber(event)")
+                        input#specifications15.form-control(type="text" name="specifications15" maxlength="50" onkeypress="return isNumber(event)")
             .row.txt-center.mt-4
                 .col-md-8.mt-3
                     a.btn.ml-4.btn-warning.linkbutton(href='/workbench/index') نمایش محصولات

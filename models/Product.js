@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-var DiselSchema = new mongoose.Schema({
+var ProductSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -21,58 +21,49 @@ var DiselSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    blocksilandr: {
+    specifications1: {
         type: String
     },
-    silandr: {
+    specifications2: {
         type: String
     },
-    sarsilandr: {
+    specifications3: {
         type: String
     },
-    millang: {
+    specifications4: {
         type: String
     },
-    milsupap: {
+    specifications5: {
         type: String
     },
-    bush: {
+    specifications6: {
         type: String
     },
-    ring: {
+    specifications7: {
         type: String
     },
-    yataghan: {
+    specifications8: {
         type: String
     },
-    supap: {
+    specifications9: {
         type: String
     },
-    seat: {
+    specifications10: {
         type: String
     },
-    gate: {
+    specifications11: {
         type: String
     },
-    waterpomp: {
+    specifications12: {
         type: String
     },
-    oilpomp: {
+    specifications13: {
         type: String
     },
-    washerkamel: {
+    specifications14: {
         type: String
     },
-    washersarsilandr: {
-        type: String
-    },
-    washerkartel: {
-        type: String
-    },
-    asbakdudohava: {
-        type: String
-    },
-    productcode: {
+    specifications15: {
         type: String
     },
     imagea: {
@@ -93,4 +84,4 @@ var DiselSchema = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('Disel', DiselSchema)
+module.exports = mongoose.model('Product', ProductSchema)

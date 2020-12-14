@@ -18,33 +18,17 @@ exports.save = (data) => {
     var transaction = new Transaction({
         name: data[0],
         totalprice: data[1],
-        blocksilandr: data[2],
-        silandr: data[3],
-        sarsilandr: data[4],
-        millang: data[5],
-        milsupap: data[6],
-        bush: data[7],
-        ring: data[8],
-        yataghan: data[9],
-        supap: data[10],
-        seat: data[11],
-        gate: data[12],
-        waterpomp: data[13],
-        oilpomp: data[14],
-        washerkamel: data[15],
-        washersarsilandr: data[16],
-        washerkartel: data[17],
-        asbakdudohava: data[18],
-        productcode: data[19],
-        description: data[20],
-        username: data[21],
-        address: data[22],
-        fname: data[23],
-        family: data[24],
-        email: data[25],
-        phone: data[26],
-        tid: data[27],
-        tdate: data[28]
+        totalcount: data[2],
+        productcode: data[3],
+        description: data[4],
+        username: data[5],
+        address: data[6],
+        fname: data[7],
+        family: data[8],
+        email: data[9],
+        phone: data[10],
+        tid: data[11],
+        tdate: data[12]
     })
     transaction.save()
 }
@@ -59,7 +43,8 @@ exports.update = (data) => {
             { 
                 address: data[1], 
                 totalprice: data[2],
-                paymenttype: data[3]
+                totalcount: data[3],
+                paymenttype: data[4]
             }
         },
     { new: true }).exec()
