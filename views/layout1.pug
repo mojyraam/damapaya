@@ -101,6 +101,7 @@ head
 			script(src='https://use.fontawesome.com/releases/v5.0.6/js/all.js')
 			//script(src='http://code.jquery.com/jquery-3.2.1.min.js')
 			script(src='./javascripts/jquery.dmenu.js')
+
 body
 	#loader.center
 	.page
@@ -459,39 +460,52 @@ body
 													//- 	p hi
 													//- br
 													//- div.p-4.bg-success.rellax(data-rellax-speed='2')
-													//- 	p hi
-				#mobile.col-sm-4(style="font-size: 0.7rem;")
-					nav.navbar.navbar-inverse.navbar-fixed-top.mt-4
+				.container(style="margin-top: -12em !important;")
+					.row
+						#mobilelogo(style="margin-right: 30em; margin-top: 2em; margin-bottom: -6em;")
+						#mobile.col-sm-3(style="font-size: 0.4rem !important;")
+					nav.navbar.navbar-inverse.navbar-fixed-top
 						.navbar-header
-							button.btn.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#bs-navbar-collapse-1' aria-expanded='false' style="border: 1px gray solid; border-radius: 5px; color: gray; font-size: 0.7rem; margin: 0.5em;") منو
-						#bs-navbar-collapse-1.collapse.navbar-collapse.ml-5.bg-white.rounded
-							ul.nav.navbar-nav.text-right.ml-5
-								li
-									a.mba(href='index.php') صفحه اصلی
-								li.dropdown
-									a.mba.dropdown-toggle(href='#' data-toggle='dropdown' role='button')
-										| سیستم های تهویه مطبوع 
-										span.caret
-									ul.dropdown-menu.ml-5.bg-white.w-100.pr-3(style="font-size: 0.7rem; border: solid 1px white;")
-										li
-											a.mba(href='#') کولر گازی
-										li
-											a.mba(href='#') داکت اسپلیت
-										//- li.dropdown-submenu
-										//- 	a.dropdown-submenu-toggle(tabindex='-1' href='#')
-										//- 		| Second Dropdown 
-										//- 		b.caret
-										//- 	ul.dropdown-menu
-										//- 		li
-										//- 			a(href='#') Sub-Menu Item
-										//- 		li
-										//- 			a(href='#') Sub-Menu Item
-										//- 		li
-										//- 			a(href='#') Sub-Menu Item
-										//- li
-										//- 	a(href='#') Menu Item
-										//- li
-										//- 	a(href='#') Menu Item
+							button.btn.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#bs-navbar-collapse-1' aria-expanded='false' style="border: 1px gray solid; border-radius: 5px; color: gray; font-size: 0.7rem; margin: 0.5em; margin-top: 1em !important;") منو
+					.row.mt-4
+						#bs-navbar-collapse-1.collapse.navbar-collapse.rounded(style="position:relative; -webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; transition: none !important; margin-top: -3em !important;")
+							ul.nav.navbar-nav.text-right.bg-dark.w-50.rounded(style="position: absolute;")
+								.col-sm-4
+									li.mt-2.mb-2
+										a.mba.menuitem(href='/' style="font-size: 0.4rem !important;") صفحه اصلی
+									li.mt-3.mb-2.dropdown
+										a.mba.dropdown-toggle.menuitem(href='#' data-toggle='dropdown' role='button' style="font-size: 0.4rem !important;")
+											| سیستم های تهویه مطبوع 
+											span.caret
+										ul.dropdown-menu.ml-5.pr-3.bg-secondary(style="font-size: 0.4rem !important; border: solid 1px gray; margin-right: 3em;  width: 0em !important")
+											li.mt-1.mb-2
+												a.menuitem.mba(href='#' style="font-size: 0.4rem !important;") کولر گازی
+											li.mt-3.mb-2
+												a.menuitem.mba(href='#' style="font-size: 0.4rem !important;") داکت اسپلیت
+									li.mt-3.mb-2.dropdown
+										a.mba.dropdown-toggle.menuitem(href='#' data-toggle='dropdown' role='button' style="font-size: 0.4rem !important;")
+											| سیستم های تهویه مطبوع 
+											span.caret
+										ul.dropdown-menu.ml-5.pr-3.bg-secondary(style="font-size: 0.4rem !important; border: solid 1px gray; margin-right: 3em;  width: 0em !important")
+											li.mt-1.mb-2
+												a.menuitem.mba(href='#' style="font-size: 0.4rem !important;") کولر گازی
+											li.mt-3.mb-2
+												a.menuitem.mba(href='#' style="font-size: 0.4rem !important;") داکت اسپلیت
+											//- li.dropdown-submenu
+											//- 	a.dropdown-submenu-toggle(tabindex='-1' href='#')
+											//- 		| Second Dropdown 
+											//- 		b.caret
+											//- 	ul.dropdown-menu
+											//- 		li
+											//- 			a(href='#') Sub-Menu Item
+											//- 		li
+											//- 			a(href='#') Sub-Menu Item
+											//- 		li
+											//- 			a(href='#') Sub-Menu Item
+											//- li
+											//- 	a(href='#') Menu Item
+											//- li
+											//- 	a(href='#') Menu Item
 					script.
 						$(function() {
 						$(window).resize();

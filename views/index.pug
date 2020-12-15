@@ -65,10 +65,10 @@ block content
     //-             li
     //-                 .col-md-1
     //-                   a.btn.btn-info(href='/users/register') ایجاد
-    .row.mt-3.bg-white.rounded(style="margin: 0px !important;")
+    .row.mt-3.bg-white.rounded.pt-3(style="margin-left: 0px !important; margin-left: 0px !important;")
       .col-md-2
       .col-md-7
-        p.welcome.text-center.mt-1 میهمان گرامی خوش آمدید
+        p.loginfamily.welcome.text-center.mt-1 میهمان گرامی خوش آمدید
         a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/login') ورود
         a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/register') ایجاد حساب کاربری
     if success_msg != null
@@ -89,7 +89,7 @@ block content
           p(style='text-align: center;') #{item}
           button.close(type='button' data-dismiss='alert' aria-label='Close')
             span(aria-hidden='true') &times;
-  #demo.carousel.slide.container.mt-2(data-ride='carousel')
+  //#demo.carousel.slide.container.mt-2(data-ride='carousel')
     // Indicators
     ul.carousel-indicators
       li.active(data-target='#demo' data-slide-to='0')
@@ -121,7 +121,7 @@ block content
     a.carousel-control-next(href='#demo' data-slide='next')
       span.carousel-control-next-icon
   br
-  .container
+  .container.bg-secondary
     ul#products
       //- div.p-4.bg-success.rellax(data-rellax-speed='-4')
       //-   a#producta(href='/branches/a') ماشین آلات راهسازی و معدنی
@@ -132,7 +132,12 @@ block content
       //- div.p-4.bg-success.rellax(data-rellax-speed='7')
       //-   a#productc(href='/branches/c') دیزل ژنراتور (مولد برق)
       //- a#productd(href='/product/d') کمپرسور
-      a#producta(href='/branches/a') سیستم تهویه مطبوع
+      a#producta.prfamily(href='/branches/a') سیستم تهویه مطبوع
+      a#producta.prfamily(href='/branches/a') سیستم تهویه مطبوع
+      a#producta.prfamily(href='/branches/a') سیستم تهویه مطبوع
+      a#producta.prfamily(href='/branches/a') سیستم تهویه مطبوع
+      a#producta.prfamily(href='/branches/a') سیستم تهویه مطبوع
+      a#producta.prfamily(href='/branches/a') سیستم تهویه مطبوع
       //- a#productb(href='/branches/b') ماشین آلات حمل و نقل جاده ای و ترابری
       //- a#productc(href='/branches/c') دیزل ژنراتور (مولد برق)
       //- a#productd(href='/product/d') کمپرسور

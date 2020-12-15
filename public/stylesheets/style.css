@@ -326,6 +326,13 @@ img#user:hover {
   transition: .5s;
 }
 
+#mobilelogo {
+  background-image: url(/images/logo.png);
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+}
+
 #loginlist li {
   list-style: none;
 }
@@ -435,6 +442,22 @@ img#user:hover {
   #mobile {
     visibility: visible;
     margin-top: -12em;
+  }
+  body {
+    font-size: 0.6rem !important;
+  }
+  .menuitem {
+    font-size: 0.6rem !important;
+  }
+  .prfamily {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  #products {
+    padding: 0px !important;
+  }
+  .loginfamily {
+    visibility: hidden;
   }
 }
 
