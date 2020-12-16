@@ -1,0 +1,608 @@
+doctype html
+head
+	//meta(name='viewport' content='width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes')
+	meta(name='viewport' content='width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no')
+	title دماپایا
+	//link(rel='stylesheet' href='/stylesheets/demo.css')
+	link(rel='stylesheet' href='/stylesheets/jquery.dmenu.css')
+	style.
+		.dm-menu
+		{
+		--dm-bg: #fff;
+		--dm-logo-width: 120px;
+		--dm-item-hover-bg: #f3f3f3;
+		--dm-menu-height: 100px;
+		}
+		.dm-menu > ul > li
+		{
+		border-right: 1px solid #eee;
+		
+		}
+		.dm-menu > ul > li:first-child
+		{
+		border-left: 1px solid #eee;
+		}
+		.dm-menu > ul > li > a
+		{
+		text-decoration: none;
+		}
+		.dm-menu > ul > li > ul > li > a
+		{
+		text-decoration: none;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > a
+		{
+		text-decoration: none;
+		font-size: 0.7rem;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > ul > li > a
+		{
+		text-decoration: none;
+		display: inline-block;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li > a
+		{
+		text-decoration: none;
+		}
+
+		#loader { 
+			border: 12px solid #f3f3f3; 
+			border-radius: 50%; 
+			border-top: 12px solid #444444; 
+			width: 70px; 
+			height: 70px; 
+			animation: spin 1s linear infinite; 
+		} 
+			
+		@keyframes spin { 
+			100% { 
+				transform: rotate(360deg); 
+			} 
+		} 
+			
+		.center { 
+			position: absolute; 
+			top: 0; 
+			bottom: 0; 
+			left: 0; 
+			right: 0; 
+			margin: auto; 
+		}
+	style.
+		| .dropdown-submenu{position: relative;}
+		| .dropdown-submenu .caret{-webkit-transform: rotate(-90deg); transform: rotate(-90deg);}
+		| .dropdown-submenu > .dropdown-menu {top:0; left:100%; margin-top:-6px; margin-left:-1px;}
+		| .dropdown-submenu.open > a:after{border-left-color:#fff;}
+		| .dropdown-submenu.open > .dropdown-menu, .dropdown-submenu.open > .dropdown-menu {display: block;}
+		| .dropdown-submenu .dropdown-menu{margin-bottom: 8px;}
+		| .navbar-default .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color: #f6f6f6;}
+		| .navbar-inverse .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#333;}
+		| .navbar .navbar-nav .open .dropdown-submenu .dropdown-menu > li > a{padding-left: 30px;}
+		| @media screen and (min-width:992px){
+		| .dropdown-submenu .dropdown-menu{margin-bottom: 2px;}
+		| .navbar .navbar-nav .open .dropdown-submenu .dropdown-menu > li > a{padding-left: 25px;}
+		| .navbar-default .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#fff;}
+		| .navbar-inverse .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#fff;}
+		| }
+	link(rel='stylesheet', href='/stylesheets/style.css')
+	link(rel="stylesheet", href='/stylesheets/bootstrap.min.css')
+	//link(rel="stylesheet", href='/stylesheets/dataTables.bootstrap.min.css')
+	link(rel="stylesheet", href='https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css')
+
+	link(rel="stylesheet", href='https://fonts.googleapis.com/icon?family=Material+Icons')
+	link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700')
+	link(rel="stylesheet", href='/stylesheets/demo.css?ver=6.1.1')
+
+	block script
+			script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+			script(src='./javascripts/hc-offcanvas-nav.js?ver=6.1.1')
+
+			script(src='./javascripts/jquery-3.4.1.min.js')
+			script(src='./javascripts/bootstrap-boundle.min.js')
+			script(src='./javascripts/jquery-1.12.3.js')
+			//script(src='./javascripts/bootstrap.min.js')
+			script(src='./javascripts/jquery.dataTables.min.js')
+			//script(src='./javascripts/dataTables.bootstrap.min.js')
+			script(src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')
+			script(src='https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js')
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js')
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js')
+			script(src='https://use.fontawesome.com/releases/v5.0.6/js/all.js')
+			//script(src='http://code.jquery.com/jquery-3.2.1.min.js')
+			script(src='./javascripts/jquery.dmenu.js')
+
+			
+
+body.theme-default
+	#mobile(style="height: 0px; padding-top: 3em;")
+		#container
+			header
+				.wrapper.cf
+					nav#main-nav
+						ul.first-nav
+							li.cryptocurrency
+								a(href='https://www.google.com/search?q=Crypto' rel='noreferrer' target='_blank') Cryptocurrency
+								ul
+									li
+										a(href='#') Bitcoin
+									li
+										a(href='#') Ethereum
+									li.add
+										a(href='#' data-nav-close='false' data-add="['Litecoin','Dogecoin','Bitcoin Cash','ZCash']") Add Coin
+							li.devices
+								span تهویه مطبوع
+								ul
+									li.mobile
+										a(href='#') Mobile Phones
+										ul
+											li
+												a(href='#') Super Smart Phone
+											li
+												a(href='#') Thin Magic Mobile
+											li
+												a(href='#') Performance Crusher
+											li
+												a(href='#') Futuristic Experience
+									li.television
+										a(href='#') Televisions
+										.subnav-container
+											ul
+												li
+													a(href='#') Flat Superscreen
+												li
+													a(href='#') Gigantic LED
+												li
+													a(href='#') Power Eater
+												li
+													a(href='#') 3D Experience
+												li
+													a(href='#') Classic Comfort
+									li.camera
+										a(href='#') Cameras
+										ul
+											li
+												a(href='#') Smart Shot
+											li
+												a(href='#') Power Shooter
+											li
+												a(href='#') Easy Photo Maker
+											li
+												a(href='#') Super Pixel
+									li(data-nav-custom-content='')
+										.custom-message
+											| You can add any custom content to your navigation items. This text is just an example.
+							li.magazines
+								a(href='#magazines') Magazines
+								ul
+									li
+										a(href='#') National Geographic
+									li
+										a(href='#') Scientific American
+									li
+										a(href='#') The Spectator
+									li
+										a(href='#') The Rambler
+									li
+										a(href='#') Physics World
+									li
+										a(href='#') Popular Science
+									li
+										a(href='#') Popular Mechanics
+									li
+										a(href='#') Sky & Telescope
+									li
+										a(href='#') Discover
+									li
+										a(href='#') New Scientist
+									li
+										a(href='#') Psychology Today
+									li
+										a(href='#') Man's Health
+									li
+										a(href='#') Wired
+									li
+										a(href='#') Vogue
+									li
+										a(href='#') Elle
+									li
+										a(href='#') Cosmopolitan
+							li.store
+								a(href='#') Store
+								ul
+									li
+										a(href='#') Clothes
+										ul
+											li
+												a(href='#') Women's Clothing
+												ul
+													li
+														a(href='#') Tops
+													li
+														a(href='#') Dresses
+													li
+														a(href='#') Trousers
+													li
+														a(href='#') Shoes
+													li
+														a(href='#') Sale
+											li
+												a(href='#') Men's Clothing
+												ul
+													li
+														a(href='#') Shirts
+													li
+														a(href='#') Trousers
+													li
+														a(href='#') Shoes
+													li
+														a(href='#') Sale
+									li
+										a(href='#') Jewelry
+									li
+										a(href='#') Music
+									li
+										a(href='#') Grocery
+										h3 Fruits
+										ul
+											li
+												a(href='#') Citruses and southern fruits
+											li
+												a(href='#') Exotic fruits
+											li
+												a(href='#') Apples and pears
+											li
+												a(href='#') Nuts
+										h3 Vegetables
+										ul
+											li
+												a(href='#') Root vegetables
+											li
+												a(href='#') Exotic vegetables
+											li
+												a(href='#') Herbs
+											li
+												a(href='#') Salads
+						h3 Examples
+						ul.second-nav
+							li.collections
+								a(href='#collections')
+									| Collections 
+									span 3
+							li.nolink(data-nav-highlight='') No Link
+							li.disabled
+								a(href='#' disabled='') Disabled Link
+							li.add
+								a(href='#' data-nav-close='false' data-add="['Charts', 'Logs', 'Tests', 'Profile']") Add Item
+						ul.bottom-nav
+							li.github
+								a(href='https://github.com/somewebmedia' rel='noreferrer' target='_blank')
+									svg(viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
+										path(d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12')
+							li.email
+								a(href='mailto:somewebmedia@gmail.com' target='_blank')
+									svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+										path(d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z')
+										path(d='M0 0h24v24H0z' fill='none')
+							li.ko-fi
+								a(href='https://ko-fi.com/somewebguy' rel='noreferrer' target='_blank')
+									svg(viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
+										path(d='M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z')
+					//- h1 HC Off-canvas Nav
+					//- h2
+					//- 	| JavaScript library for creating toggled off-canvas multi-level navigations, allowing endless nesting of submenu elements.
+					//- a.git(href='https://github.com/somewebmedia/hc-offcanvas-nav' rel='noreferrer' target='_blank')
+					//- 	svg(viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
+					//- 		path(d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12')
+					//- 	|             Download and docs on GitHub
+					//- .ver
+					//- 	| v
+					//- 	span 6.1.1
+					a.toggle(href='#')
+						span
+						//|             Toggle Navigation
+						//i or swipe the screen from edge on mobile ;)
+	#loader.center
+	.page
+		.header
+			.header-menu.mt-2.mb-4
+				#web.container
+					nav#menu
+						a(href='/' style='background-image: url(images/logo.png)')
+						ul
+							li
+								a(href='/') صفحه اصلی
+							li
+								a(href='#')
+									i.fas.fa-search
+									|  جستجوی محصولات
+								ul
+									li
+										form
+											input.form-control.mb-2(type='text')
+											input.form-control(type='submit' value='جستجو')
+							li
+								a(href='#')  درباره ما
+							li.IconOnly
+								a(href='#')
+									i.fab.fa-twitter
+									|  Twitter
+							li.IconOnly
+								a(href='#')
+									i.fab.fa-facebook
+									|  Facebook
+							li.IconOnly
+								a(href='#')
+									i.fab.fa-instagram
+									|  Instagram
+							li.IconOnly
+								a(href='#')
+									i.fab.fa-telegram
+									|  Telegram
+							li.IconOnly
+								a(href='/users/logout')
+									i.fas.fa-user(style="color: red;")
+									|  User
+							li.IconOnly
+								a(href='/users/login')
+									i.fas.fa-user(style="color: green;")
+									|  User
+							li
+								a(href='#') پیشنهاد های ویژه دماپایا 
+							li.SubmenuMega.SubmenuFullwidth
+								a(href='#')
+									//- i.fas.fa-cogs
+									|  ارتباط با ما
+							li.SubmenuMega.SubmenuFullwidth
+								a(href='#')
+									//- i.fas.fa-cogs
+									|  صندوق پیشنهادات
+							li.SubmenuTabs.IconHidden
+								a(href='/')
+									i.fas.fa-cogs
+									|  دسته بندی محصولات
+								ul.text-right(style="direction: ltr;")
+									li.SubmenuMega
+										a(href='/branches/a') سیستم های تهویه مطبوع
+										ul
+											li
+												div.rounded.tilt(style='background-image: url(images/cooler.jpg);')
+												a(href='/product/a1') کولر گازی و اسپلیت
+												ul
+													li
+														a.small.m-1(href='/product/a3a') گری
+															img.ml-3(src="/images/brands/shantui.png")
+													li
+														a.small.m-1(href='/product/a3a') زانتی
+															img.ml-3(src="/images/brands/shantui.png")
+													li.SubmenuMega
+														a.small.m-1(href='/branches/a3') سایر برند ها
+														ul.text-center(style="font-size: 0.75rem; color: gray; padding: 0px; margin-left: 3em")
+															li
+																a.small.m-1(href='/product/a3c') ایوولی
+																	//img.ml-3(src="/images/brands/newholland.png")
+																a.small.m-1(href='/product/a3d') گرین
+																	//img.ml-3(src="/images/brands/tiragemachine.png")
+																a.small.m-1(href='/product/a3c') بوش
+																	//img.ml-3(src="/images/brands/newholland.png")
+															li(style="margin-left: -2em;")
+																a.small.m-1(href='/product/a3d') هایسنس
+																	//img.ml-3(src="/images/brands/tiragemachine.png")
+																a.small.m-1(href='/product/a3c') تک الکتریک
+																	//img.ml-3(src="/images/brands/tiragemachine.png")
+											li
+												div.rounded.tilt(style='background-image: url(images/split.jpg);')
+												a(href='/product/a2') داکت اسپلیت
+											li
+												div.rounded.tilt(style='background-image: url(images/split.jpg);')
+												a(href='/product/a2') اسپلیت مرکزی
+											li
+												div.rounded.tilt(style='background-image: url(images/split.jpg);')
+												a(href='/product/a2') فن کوئل
+											li
+												div.rounded.tilt(style='background-image: url(images/split.jpg);')
+												a(href='/product/a2') چیلر
+											li
+												div.rounded.tilt(style='background-image: url(images/split.jpg);')
+												a(href='/product/a2') مینی چیلر
+					script.
+						$(function() {
+						$(window).resize();
+						});
+						$('#menu').dmenu({
+						menu 	: {
+						logo			: true,
+						align			: 'left'
+						},
+						item	: {
+						bg				: true,
+						border 			: false,
+						subindicator	: true,
+						fit			: [
+						{
+						items 		: null,
+						fitter 		: 'icon-hide',
+						order		: 'all'
+						},
+						{
+						items 		: null,
+						fitter 		: 'icon-only',
+						order		: 'all'
+						},
+						{
+						items 		: ':not(.dm-item_align-right)',
+						fitter 		: 'submenu',
+						order		: 'rtl'
+						},
+						{
+						items 		: ':not(.dm-item_align-right)',
+						fitter 		: 'hide',
+						order		: 'rtl'
+						}
+						]
+						},
+						submenu	: {
+						arrow			: false,
+						border			: false,
+						shadow			: true
+						},
+						subitem	: {
+						bg				: true,
+						border			: false
+						}
+						});
+					script.
+						//VanillaTilt.init(document.querySelector(".tilt"), {
+						//max: 25,
+						//speed: 400
+						//});
+						VanillaTilt.init(document.querySelectorAll(".tilt"), {
+							max: 15,
+							speed: 200
+						});
+					//- script.
+					//- 	var rellax = new Rellax('.rellax');
+					script.
+						document.onreadystatechange = function() { 
+						if (document.readyState !== "complete") { 
+						document.querySelector( 
+						"body").style.visibility = "hidden"; 
+						document.querySelector( 
+						"#loader").style.visibility = "visible"; 
+						} else { 
+						document.querySelector( 
+						"#loader").style.display = "none"; 
+						document.querySelector( 
+						"body").style.visibility = "visible"; 
+						} 
+						};
+		//- main
+		//- 	.wrapper
+		//- 		.content
+		//- 			h4 Position
+		//- 			.actions.position
+		//- 				div
+		//- 					a.button.active(href='#' data-demo="{position:'left'}") Left
+		//- 				div
+		//- 					a.button(href='#' data-demo="{position:'right'}") Right
+		//- 				div
+		//- 					a.button(href='#' data-demo="{position:'top', levelSpacing:0}") Top
+		//- 				div
+		//- 					a.button(href='#' data-demo="{position:'bottom', levelSpacing:0}") Bottom
+		//- 			h4 Theme
+		//- 			.actions.theme
+		//- 				div
+		//- 					a.thumb.active(href='#' data-demo="{theme:'default'}" title='Default' style='background-image:url(images/theme-1.png);')
+		//- 				div
+		//- 					a.thumb(href='#' data-demo="{theme:'carbon'}" title='Dark' style='background-image:url(images/theme-2.png);')
+		//- 			h4 Levels open type
+		//- 			.actions.levels
+		//- 				div
+		//- 					a.button.active(href='#' data-demo="{levelOpen:'overlap', levelSpacing:40}") Overlap levels
+		//- 				div
+		//- 					a.button(href='#' data-demo="{levelOpen:'expand', levelSpacing:25}") Expand levels
+		//- 				div
+		//- 					a.button(href='#' data-demo='{levelOpen:false, levelSpacing:25}') Unfolded levels
+		//- 			h4 Additional options
+		//- 			.actions.checkboxes
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo='{closeOnClick:true}' checked='')
+		//- 					span
+		//- 					| Close on click
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo='{disableBody:true}' checked='')
+		//- 					span
+		//- 					| Disable body
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo="{pushContent:'#container'}" checked='')
+		//- 					span
+		//- 					| Push content
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo="{navTitle: 'All Categories', levelTitles:true}" checked='')
+		//- 					span
+		//- 					| Main nav and level titles
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo='{insertClose:true, insertBack:true}' checked='')
+		//- 					span
+		//- 					| Close and back buttons
+		//- footer
+			//- .wrapper
+			//- 	a.swm(href='https://github.com/somewebmedia' rel='noreferrer' target='_blank' title='Some Web Media')
+			//- 		svg(xmlns='http://www.w3.org/2000/svg' height='17' viewBox='0 0 430.24 46')
+			//- 			path.l-1(d='M0,46H44L92,0H48Z')
+			//- 			path.l-2(d='M237.24,46h-44l-26-24.92L141.24,46h-44l-24-23,22-21.08,24,23L145.24,0h44l26,24.92L241.24,0h44Z')
+			//- 			path.l-3(d='M386.24,46l-26-24.92L334.24,46h-44l-24-23,22-21.08,24,23L338.24,0h44l48,46h-44Z')
+		script.
+			(function($) {
+			'use strict';
+			// call our plugin
+			var Nav = new hcOffcanvasNav('#main-nav', {
+			disableAt: false,
+			customToggle: '.toggle',
+			levelSpacing: 40,
+			navTitle: 'All Categories',
+			levelTitles: true,
+			levelTitleAsBack: true,
+			pushContent: '#container',
+			labelClose: false
+			});
+			// add new items to original nav
+			$('#main-nav').find('li.add').children('a').on('click', function() {
+			var $this = $(this);
+			var $li = $this.parent();
+			var items = eval('(' + $this.attr('data-add') + ')');
+			$li.before('<li class="new"><a href="#">'+items[0]+'</a></li>');
+			items.shift();
+			if (!items.length) {
+			$li.remove();
+			}
+			else {
+			$this.attr('data-add', JSON.stringify(items));
+			}
+			Nav.update(true); // update DOM
+			});
+			// demo settings update
+			const update = function(settings) {
+			if (Nav.isOpen()) {
+			Nav.on('close.once', function() {
+			Nav.update(settings);
+			Nav.open();
+			});
+			Nav.close();
+			}
+			else {
+			Nav.update(settings);
+			}
+			};
+			$('.actions').find('a').on('click', function(e) {
+			e.preventDefault();
+			var $this = $(this).addClass('active');
+			var $siblings = $this.parent().siblings().children('a').removeClass('active');
+			var settings = eval('(' + $this.data('demo') + ')');
+			if ('theme' in settings) {
+			$('body').removeClass().addClass('theme-' + settings['theme']);
+			}
+			else {
+			update(settings);
+			}
+			});
+			$('.actions').find('input').on('change', function() {
+			var $this = $(this);
+			var settings = eval('(' + $this.data('demo') + ')');
+			if ($this.is(':checked')) {
+			update(settings);
+			}
+			else {
+			var removeData = {};
+			$.each(settings, function(index, value) {
+			removeData[index] = false;
+			});
+			update(removeData);
+			}
+			});
+			})(jQuery);
+	block content

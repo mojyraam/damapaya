@@ -1,6 +1,6 @@
 body {
   /* background-image: url(/images/cinema.jpg); */
-  font: 20px Tahoma;
+  font: 1rem Tahoma !important;
   padding: 1%;
   font-weight: 100;
   opacity: 0.9;
