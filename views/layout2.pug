@@ -114,13 +114,13 @@ head
 			
 
 body.theme-default
-	#mobile(style="height: 0px; padding-top: 3em;")
+	#mobile(style="height: 0px; padding-top: 3em; zindex: 2em;")
 		#container
 			header
 				.wrapper.cf
 					nav#main-nav
 						ul.first-nav
-							li.cryptocurrency
+							li
 								a(href='https://www.google.com/search?q=Crypto' rel='noreferrer' target='_blank') Cryptocurrency
 								ul
 									li
@@ -129,7 +129,7 @@ body.theme-default
 										a(href='#') Ethereum
 									li.add
 										a(href='#' data-nav-close='false' data-add="['Litecoin','Dogecoin','Bitcoin Cash','ZCash']") Add Coin
-							li.devices
+							li
 								span تهویه مطبوع
 								ul
 									li.mobile
@@ -171,7 +171,7 @@ body.theme-default
 									li(data-nav-custom-content='')
 										.custom-message
 											| You can add any custom content to your navigation items. This text is just an example.
-							li.magazines
+							li
 								a(href='#magazines') Magazines
 								ul
 									li
@@ -206,7 +206,7 @@ body.theme-default
 										a(href='#') Elle
 									li
 										a(href='#') Cosmopolitan
-							li.store
+							li
 								a(href='#') Store
 								ul
 									li
