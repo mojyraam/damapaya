@@ -459,8 +459,21 @@ img#user:hover {
   .loginfamily {
     visibility: hidden;
   }
+  .bx-prev {
+    display: none;
+  }
 }
 
 .mbb:active {
   border-style: none;
+}
+
+.bx-prev, .bx-next {
+  text-decoration: none !important;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  line-height: 0; 
+  font-size: 0;
+  color: transparent;
 }
