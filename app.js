@@ -62,6 +62,7 @@ app.use('/branches/', express.static('public'));
 // Express session
 app.use(session({
   secret: 'secret',
+  cookie: { maxAge: 1800000 },
   resave: true,
   saveUninitialized: true
 }))
