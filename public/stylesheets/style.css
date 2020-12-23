@@ -456,11 +456,32 @@ img#user:hover {
   #products {
     padding: 0px !important;
   }
-  .loginfamily {
-    visibility: hidden;
-  }
   .bx-prev {
     display: none;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  
+  .dm-menu > ul > li > a, 		
+  .dm-menu > ul > li > ul > li > a,
+  .dm-menu > ul > li > ul > li > ul > li > ul > li > a
+  {
+  font-size: .65rem;
+  }
+  .dm-menu > ul > li > ul > li > ul > li > a
+  {
+    font-size: .55rem;
+  }
+  .dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li > a
+  {
+    font-size: .55rem;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .dm-menu > ul > li > ul > li > ul > li > ul > li > ul
+  {
+    margin-left: 2em !important;
   }
 }
 

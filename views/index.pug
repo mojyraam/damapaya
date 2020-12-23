@@ -1,4 +1,4 @@
-extends layout2
+extends layout1
 block append script
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css')
   //script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
@@ -81,7 +81,7 @@ block content
     .row.mt-3.bg-white.rounded.pt-3(style="margin-left: 0px !important; margin-left: 0px !important;")
       .col-md-2
       .col-md-7
-        p.loginfamily.welcome.text-center.mt-1 میهمان گرامی خوش آمدید
+        p.welcome.text-center.mt-1 میهمان گرامی خوش آمدید
         a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/login') ورود
         a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/register') ایجاد حساب کاربری
     if success_msg != null

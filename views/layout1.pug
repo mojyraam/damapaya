@@ -1,8 +1,9 @@
 doctype html
 head
-	meta(name='viewport' content='width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes')
+	//meta(name='viewport' content='width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes')
+	meta(name='viewport' content='width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no')
 	title دماپایا
-	//link(rel='stylesheet' href='css/demo.css')
+	//link(rel='stylesheet' href='/stylesheets/demo.css')
 	link(rel='stylesheet' href='/stylesheets/jquery.dmenu.css')
 	style.
 		.dm-menu
@@ -15,7 +16,6 @@ head
 		.dm-menu > ul > li
 		{
 		border-right: 1px solid #eee;
-		
 		}
 		.dm-menu > ul > li:first-child
 		{
@@ -32,6 +32,7 @@ head
 		.dm-menu > ul > li > ul > li > ul > li > a
 		{
 		text-decoration: none;
+		font-size: 0.7rem;
 		}
 		.dm-menu > ul > li > ul > li > ul > li > ul > li > a
 		{
@@ -86,13 +87,20 @@ head
 	link(rel="stylesheet", href='/stylesheets/bootstrap.min.css')
 	//link(rel="stylesheet", href='/stylesheets/dataTables.bootstrap.min.css')
 	link(rel="stylesheet", href='https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css')
-	link(rel="stylesheet", href='/stylesheets/responsive.bootstrap.min.css')
+
+	link(rel="stylesheet", href='https://fonts.googleapis.com/icon?family=Material+Icons')
+	link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700')
+	link(rel="stylesheet", href='/stylesheets/demo.css?ver=6.1.1')
+
 	block script
+			script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+			script(src='./javascripts/hc-offcanvas-nav.js?ver=6.1.1')
+
 			script(src='./javascripts/jquery-3.4.1.min.js')
 			script(src='./javascripts/bootstrap-boundle.min.js')
 			script(src='./javascripts/jquery-1.12.3.js')
 			//script(src='./javascripts/bootstrap.min.js')
-			//script(src='./javascripts/test-script.js')
+			script(src='./javascripts/jquery.dataTables.min.js')
 			//script(src='./javascripts/dataTables.bootstrap.min.js')
 			script(src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')
 			script(src='https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js')
@@ -102,7 +110,225 @@ head
 			//script(src='http://code.jquery.com/jquery-3.2.1.min.js')
 			script(src='./javascripts/jquery.dmenu.js')
 
-body
+			
+
+body.theme-default
+	#mobile(style="height: 0px; padding-top: 3em; zindex: 2em;")
+		#container
+			header
+				.wrapper.cf
+					nav#main-nav
+						ul.first-nav
+							li
+								span سیستم های تهویه مطبوع
+								ul
+									li
+										a(href='/branches/a1') کولر گازی و اسپلیت
+										ul
+											li
+												a(href='/branches/a1a') گری
+									li
+										a(href='#') داکت اسپلیت
+									li
+										a(href='#') اسپلیت مرکزی
+									li
+										a(href='#') فن کوئل
+									li
+										a(href='#') چیلر
+									li
+										a(href='#') مینی چیلر
+									li
+										a(href='#') برج خنک کن
+									li
+										a(href='#') هوا ساز
+									li
+										a(href='#') رفتاب پکیج
+									li
+										a(href='#') کولر ابی
+									li
+										a(href='#') زانت
+									li
+										a(href='#') ایر واشر
+									li
+										a(href='#') فن سانتریفیوژ
+									//- li.add
+									//- 	a(href='#' data-nav-close='false' data-add="['اسپلیت مرکزی','فن کوئل','چیلر']") Add Coin
+						//- 	li
+						//- 		span تهویه مطبوع
+						//- 		ul
+						//- 			li.mobile
+						//- 				a(href='#') Mobile Phones
+						//- 				ul
+						//- 					li
+						//- 						a(href='#') Super Smart Phone
+						//- 					li
+						//- 						a(href='#') Thin Magic Mobile
+						//- 					li
+						//- 						a(href='#') Performance Crusher
+						//- 					li
+						//- 						a(href='#') Futuristic Experience
+						//- 			li.television
+						//- 				a(href='#') Televisions
+						//- 				.subnav-container
+						//- 					ul
+						//- 						li
+						//- 							a(href='#') Flat Superscreen
+						//- 						li
+						//- 							a(href='#') Gigantic LED
+						//- 						li
+						//- 							a(href='#') Power Eater
+						//- 						li
+						//- 							a(href='#') 3D Experience
+						//- 						li
+						//- 							a(href='#') Classic Comfort
+						//- 			li.camera
+						//- 				a(href='#') Cameras
+						//- 				ul
+						//- 					li
+						//- 						a(href='#') Smart Shot
+						//- 					li
+						//- 						a(href='#') Power Shooter
+						//- 					li
+						//- 						a(href='#') Easy Photo Maker
+						//- 					li
+						//- 						a(href='#') Super Pixel
+						//- 			li(data-nav-custom-content='')
+						//- 				.custom-message
+						//- 					| You can add any custom content to your navigation items. This text is just an example.
+						//- 	li
+						//- 		a(href='#magazines') Magazines
+						//- 		ul
+						//- 			li
+						//- 				a(href='#') National Geographic
+						//- 			li
+						//- 				a(href='#') Scientific American
+						//- 			li
+						//- 				a(href='#') The Spectator
+						//- 			li
+						//- 				a(href='#') The Rambler
+						//- 			li
+						//- 				a(href='#') Physics World
+						//- 			li
+						//- 				a(href='#') Popular Science
+						//- 			li
+						//- 				a(href='#') Popular Mechanics
+						//- 			li
+						//- 				a(href='#') Sky & Telescope
+						//- 			li
+						//- 				a(href='#') Discover
+						//- 			li
+						//- 				a(href='#') New Scientist
+						//- 			li
+						//- 				a(href='#') Psychology Today
+						//- 			li
+						//- 				a(href='#') Man's Health
+						//- 			li
+						//- 				a(href='#') Wired
+						//- 			li
+						//- 				a(href='#') Vogue
+						//- 			li
+						//- 				a(href='#') Elle
+						//- 			li
+						//- 				a(href='#') Cosmopolitan
+						//- 	li
+						//- 		a(href='#') Store
+						//- 		ul
+						//- 			li
+						//- 				a(href='#') Clothes
+						//- 				ul
+						//- 					li
+						//- 						a(href='#') Women's Clothing
+						//- 						ul
+						//- 							li
+						//- 								a(href='#') Tops
+						//- 							li
+						//- 								a(href='#') Dresses
+						//- 							li
+						//- 								a(href='#') Trousers
+						//- 							li
+						//- 								a(href='#') Shoes
+						//- 							li
+						//- 								a(href='#') Sale
+						//- 					li
+						//- 						a(href='#') Men's Clothing
+						//- 						ul
+						//- 							li
+						//- 								a(href='#') Shirts
+						//- 							li
+						//- 								a(href='#') Trousers
+						//- 							li
+						//- 								a(href='#') Shoes
+						//- 							li
+						//- 								a(href='#') Sale
+						//- 			li
+						//- 				a(href='#') Jewelry
+						//- 			li
+						//- 				a(href='#') Music
+						//- 			li
+						//- 				a(href='#') Grocery
+						//- 				h3 Fruits
+						//- 				ul
+						//- 					li
+						//- 						a(href='#') Citruses and southern fruits
+						//- 					li
+						//- 						a(href='#') Exotic fruits
+						//- 					li
+						//- 						a(href='#') Apples and pears
+						//- 					li
+						//- 						a(href='#') Nuts
+						//- 				h3 Vegetables
+						//- 				ul
+						//- 					li
+						//- 						a(href='#') Root vegetables
+						//- 					li
+						//- 						a(href='#') Exotic vegetables
+						//- 					li
+						//- 						a(href='#') Herbs
+						//- 					li
+						//- 						a(href='#') Salads
+						//- h3 Examples
+						//- ul.second-nav
+						//- 	li.collections
+						//- 		a(href='#collections')
+						//- 			| Collections 
+						//- 			span 3
+						//- 	li.nolink(data-nav-highlight='') No Link
+						//- 	li.disabled
+						//- 		a(href='#' disabled='') Disabled Link
+						//- 	li.add
+						//- 		a(href='#' data-nav-close='false' data-add="['Charts', 'Logs', 'Tests', 'Profile']") Add Item
+						//- ul.bottom-nav
+						//- 	li.github
+						//- 		a(href='https://github.com/somewebmedia' rel='noreferrer' target='_blank')
+						//- 			svg(viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
+						//- 				path(d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12')
+						//- 	li.email
+						//- 		a(href='mailto:somewebmedia@gmail.com' target='_blank')
+						//- 			svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+						//- 				path(d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z')
+						//- 				path(d='M0 0h24v24H0z' fill='none')
+						//- 	li.ko-fi
+						//- 		a(href='https://ko-fi.com/somewebguy' rel='noreferrer' target='_blank')
+						//- 			svg(viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
+						//- 				path(d='M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z')
+
+
+					//- h1 HC Off-canvas Nav
+					//- h2
+					//- 	| JavaScript library for creating toggled off-canvas multi-level navigations, allowing endless nesting of submenu elements.
+					//- a.git(href='https://github.com/somewebmedia/hc-offcanvas-nav' rel='noreferrer' target='_blank')
+					//- 	svg(viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
+					//- 		path(d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12')
+					//- 	|             Download and docs on GitHub
+					//- .ver
+					//- 	| v
+					//- 	span 6.1.1
+					a.toggle(href='#')
+						span
+						//|             Toggle Navigation
+						//i or swipe the screen from edge on mobile ;)
+					#mobilelogo.rounded(style="margin-top: 4.35em !important;")
+						a(href='/branches/a' style="margin-right: 4.3em; color: white; font-size: 2rem; font-family: tahoma;") دماپایا
 	#loader.center
 	.page
 		.header
@@ -148,62 +374,6 @@ body
 								a(href='/users/login')
 									i.fas.fa-user(style="color: green;")
 									|  User
-							//li.SubmenuMega
-								a(href='#') ماشین آلات راهسازی معدنی
-								ul
-									li
-										a(href='#') Lorem ipsum
-										ul
-											li
-												a(href='#') Dolor sit amet
-											li
-												a(href='#') Lorem ipsum dolor
-											li
-												a(href='#') Dolor sit amet (flyout)
-												ul
-													li
-														a(href='#') Lorem ipsum dolor
-													li
-														a(href='#') Ipsum dolor
-											li.SubSubmenuAlignRight
-												a(href='#') Lorem ipsum dolor (flyout left)
-												ul
-													li
-														a(href='#') Lorem ipsum dolor
-													li
-														a(href='#') Dolor sit amet
-									li
-										a(href='#') Dolor sit
-										ul
-											li
-												a(href='#') Dolor sit amet
-											li
-												a(href='#') Lorem ipsum dolor
-											li
-												a(href='#') Dolor sit amet (flyout)
-												ul
-													li
-														a(href='#') Lorem ipsum dolor
-													li
-														a(href='#') Ipsum dolor
-													li.SubSubmenuAlignRight
-														a(href='#') Lorem ipsum dolor (flyout left)
-														ul
-															li
-																a(href='#') Lorem ipsum dolor
-															li
-																a(href='#') Dolor sit amet
-															li
-																a(href='#') Lorem ipsum dolor
-															li
-																a(href='#') Dolor sit amet
-									li
-										a(href='#') Amet
-										ul
-											li
-												a(href='#') Link
-											li
-												a(href='#') Link
 							li
 								a(href='#') پیشنهاد های ویژه دماپایا 
 							li.SubmenuMega.SubmenuFullwidth
@@ -214,54 +384,6 @@ body
 								a(href='#')
 									//- i.fas.fa-cogs
 									|  صندوق پیشنهادات
-								//- ul.text-right
-								//- 	li.p-3
-								//- 		div(style='background-image: url(images/branches/qaltak.png)')
-								//- 		a(href='#') ماشین الات راهسازی معدنی
-								//- 		ul
-								//- 			li
-								//- 				a.small(href='#') لودر
-								//- 			li.SubSubmenuAlignRight.SubmenuMega
-								//- 				a.small(href='#')
-								//- 					|  غلطک
-								//- 				ul
-								//- 					li
-								//- 						a(href='#') هیوندای
-								//- 							img.mr-3(src="/images/brands/hyundai.png")
-								//- 					li
-								//- 						a(href='#') کوماتسو
-								//- 							img.mr-3(src="/images/brands/komatsu.png")
-								//- 			li.SubSubmenuAlignRight
-								//- 				a(href='#') Link (flyout left)
-								//- 				ul
-								//- 					li
-								//- 						a(href='#') Link
-								//- 					li
-								//- 						a(href='#') Link
-								//- 	li.p-3
-								//- 		div(style='background-image: url(images/branches/qaltak.png)')
-								//- 		a(href='#') دیزل ژنراتور
-								//- 		ul
-								//- 			li
-								//- 				a(href='#') Link
-								//- 			li
-								//- 				a(href='#') Link
-								//- 	li.p-3
-								//- 		div(style='background-image: url(images/branches/qaltak.png)')
-								//- 		a(href='#') کمپرسور ها
-								//- 		ul
-								//- 			li
-								//- 				a(href='#') Link
-								//- 			li
-								//- 				a(href='#') Link
-								//- 	li.p-3
-								//- 		div(style='background-image: url(images/branches/qaltak.png)')
-								//- 		a(href='#') کمپرسور ها
-								//- 		ul
-								//- 			li
-								//- 				a(href='#') Link
-								//- 			li
-								//- 				a(href='#') Link
 							li.SubmenuTabs.IconHidden
 								a(href='/')
 									i.fas.fa-cogs
@@ -298,6 +420,31 @@ body
 											li
 												div.rounded.tilt(style='background-image: url(images/split.jpg);')
 												a(href='/product/a2') داکت اسپلیت
+												ul
+													li
+														a.small.m-1(href='/product/a3a') یورو ایر
+															img.ml-3(src="/images/brands/shantui.png")
+													li
+														a.small.m-1(href='/product/a3a') الجی
+															img.ml-3(src="/images/brands/shantui.png")
+													li.SubmenuMega
+														a.small.m-1(href='/branches/a3') سایر برند ها
+														ul.text-center(style="font-size: 0.75rem; color: gray; padding: 0px; margin-left: 3em")
+															li
+																a.small.m-1(href='/product/a3c') مدیا
+																	//img.ml-3(src="/images/brands/newholland.png")
+																a.small.m-1(href='/product/a3c') جی پلاس
+																	//img.ml-3(src="/images/brands/newholland.png")
+																a.small.m-1(href='/product/a3c') گرین
+																	//img.ml-3(src="/images/brands/newholland.png")
+															li(style="margin-left: -2em;")
+																a.small.m-1(href='/product/a3c') شیزن
+																	//img.ml-3(src="/images/brands/newholland.png")
+																a.small.m-1(href='/product/a3c') میتسوبیشی 
+																	//img.ml-3(src="/images/brands/newholland.png")
+																a.small.m-1(href='/product/a3c') تک الکتریک
+																	//img.ml-3(src="/images/brands/newholland.png")
+
 											li
 												div.rounded.tilt(style='background-image: url(images/split.jpg);')
 												a(href='/product/a2') اسپلیت مرکزی
@@ -310,202 +457,6 @@ body
 											li
 												div.rounded.tilt(style='background-image: url(images/split.jpg);')
 												a(href='/product/a2') مینی چیلر
-											//- li
-											//- 	div.rounded.tilt(style='background-image: url(images/branches/bulldozer.png)')
-											//- 	a(href='/branches/a3') بلدوزر
-											//- 	ul
-											//- 		li
-											//- 			a.small.m-1(href='/product/a3a') شنتویی
-											//- 				img.ml-3(src="/images/brands/shantui.png")
-											//- 		li
-											//- 			a.small.m-1(href='/product/a3b') کوماتسو
-											//- 				img.ml-3(src="/images/brands/komatsu.png")
-											//- 		li.SubmenuMega
-											//- 			a.small.m-1(href='/branches/a3') سایر برند ها
-											//- 			ul
-											//- 				li
-											//- 					a.small.m-1(href='/product/a3c') نیو هلند
-											//- 						img.ml-3(src="/images/brands/newholland.png")
-											//- 					a.small.m-1(href='/product/a3d') تیراژه ماشین
-											//- 						img.ml-3(src="/images/brands/tiragemachine.png")
-											//- 					a.small.m-1(href='/product/a3e') چانگلین
-											//- 						img.ml-3(src="/images/brands/changlin.png")
-											//- 					a.small.m-1(href='/product/a3f') کیس کراول
-											//- 						img.ml-3(src="/images/brands/casecrawle.png")
-											//- 				li
-											//- 					a.small.m-1(href='/product/a3g') چترا دوزر
-											//- 						img.ml-3(src="/images/brands/chetradozer.png")
-											//- 					a.small.m-1(href='/product/a3h') پاور پلاس
-											//- 						img.ml-3(src="/images/brands/powerplus.png")
-											//- 					a.small.m-1(href='/product/a3i') زوملاین
-											//- 						img.ml-3(src="/images/brands/zoomlion.png")
-											//- 					a.small.m-1(href='/product/a3j') لیوگانگ
-											//- 						img.ml-3(src="/images/brands/liugong.png")
-											//- 				li
-											//- 					a.small.m-1(href='/product/a3k') اچ بی ایکس جی 
-											//- 						img.ml-3(src="/images/brands/hbxg.png")
-											//- 					a.small.m-1(href='/product/a3l') ارهینو
-											//- 						img.ml-3(src="/images/brands/rhino.png")
-											//- 					a.small.m-1(href='/product/a3m') ایس
-											//- 						img.ml-3(src="/images/brands/ace.png")
-											//- li
-											//- 	div.rounded.tilt(style='background-image: url(images/branches/grader.png)')
-											//- 	a(href='/branches/a4') گریدر
-											//- 	ul
-											//- 		li
-											//- 			a.small.m-1(href='/product/a4a') کوماتسو
-											//- 				img.ml-3(src="/images/brands/komatsu.png")
-											//- 		li
-											//- 			a.small.m-1(href='/product/a4b') نیو هلند
-											//- 				img.ml-3(src="/images/brands/newholland.png")
-											//- 		li.SubmenuMega.SubSubmenuAlignRight
-											//- 			a.small.m-1(href='/branches/a4') سایر برند ها
-											//- 			ul
-											//- 				li
-											//- 					a.small.m-1(href='/product/a4c') چانگلین
-											//- 						img.ml-3(src="/images/brands/changlin.png")
-											//- 					a.small.m-1(href='/product/a4d') تیراژه ماشین
-											//- 						img.ml-3(src="/images/brands/tiragemachine.png")
-											//- 					a.small.m-1(href='/product/a4e') ایکس سی ام جی
-											//- 						img.ml-3(src="/images/brands/xcmg.png")
-											//- 				li
-											//- 					a.small.m-1(href='/product/a4f') شنتویی
-											//- 						img.ml-3(src="/images/brands/sany.png")
-											//- 					a.small.m-1(href='/product/a4g') سانی
-											//- 						img.ml-3(src="/images/brands/liugong.png")
-											//- 					a.small.m-1(href='/product/a4h') لیوگانگ
-											//- 						img.ml-3(src="/images/brands/shantui.png")
-											//- 				li
-											//- 					a.small.m-1(href='/product/a4i') پاور پلاس
-											//- 						img.ml-3(src="/images/brands/ace.png")
-											//- 					a.small.m-1(href='/product/a4j') ارهینو
-											//- 						img.ml-3(src="/images/brands/powerplus.png")
-											//- 					a.small.m-1(href='/product/a4k') ایس
-											//- 						img.ml-3(src="/images/brands/rhino.png")
-											//- li
-											//- 	div.rounded.tilt(style='background-image: url(images/branches/qaltak.png)')
-											//- 	a(href='/branches/a5') غلطک
-											//- 	ul
-											//- 		li
-											//- 			a.small.m-1(href='/product/a5a') دلتا
-											//- 				img.ml-3(src="/images/brands/delta.png")
-											//- 		li
-											//- 			a.small.m-1(href='/product/a5b') هلیکو
-											//- 				img.ml-3(src="/images/brands/helico.png")
-											//- 		li.SubmenuMega.SubSubmenuAlignRight
-											//- 			a.small.m-1(href='/branches/a5') سایر برند ها
-											//- 			ul
-											//- 				li
-											//- 					a.small.m-1(href='/product/a5c') تیراژه ماشین
-											//- 						img.ml-3(src="/images/brands/tiragemachine.png")
-											//- 					a.small.m-1(href='/product/a5d') چانگلین
-											//- 						img.ml-3(src="/images/brands/changlin.png")
-											//- li
-											//- 	div.rounded.tilt(style='background-image: url(images/branches/dumptruk.png)')
-											//- 	a(href='/branches/a6') دامپتراک
-											//- 	ul
-											//- 		li.SubmenuMega.SubSubmenuAlignRight
-											//- 			a.small.m-1(href='/branches/a6') سایر برند ها
-											//- 			ul
-											//- 				li
-											//- 					a.small.m-1(href='/product/a6a') ان اچ ال ترکس
-											//- 						img.ml-3(src="/images/brands/nhlterex.png")
-											//- 					a.small.m-1(href='/product/a6b') کوماتسو
-											//- 						img.ml-3(src="/images/brands/komatsu.png")
-											//- 				li
-											//- 					a.small.m-1(href='/product/a6c') بلاز
-											//- 						img.ml-3(src="/images/brands/belaz.png")
-											//- 					a.small.m-1(href='/product/a6d') سانی
-											//- 						img.ml-3(src="/images/brands/sany.png")
-											//- 	a.SubSubmenuInline(href='/branches/a7') بیلبکهو
-											//- 	ul
-											//- 		li
-											//- 			a.small.m-1(href='/product/a7a') چانگلین
-											//- 				img.ml-3(src="/images/brands/changlin.png")
-									//- li.SubmenuMega
-									//- 	a(href='/branches/b') ماشین الات حمل و نقل جاده ای و ترابری
-									//- 	ul
-									//- 		li
-									//- 			img.zoom.rounded(src="images/brands/saypadiesel.png")
-									//- 			a.text-center(href='/product/b1' style="text-decoration: none;") سایپا دیزل
-									//- 		li
-									//- 			img.zoom.rounded(src="images/brands/bahmandiesel.png")
-									//- 			a.text-center(href='/product/b2' style="text-decoration: none;") بهمن دیزل
-									//- 		li
-									//- 			img.zoom.rounded(src="images/brands/karizankhodro.png")
-									//- 			a.text-center(href='/product/b3' style="text-decoration: none;") کاریزان خودرو
-									//- 		li
-									//- 			img.zoom.rounded(src="images/brands/bmc.png")
-									//- 			a.text-center(href='/product/b4' style="text-decoration: none;") بی ام سی
-									//- 		li
-									//- 			img.zoom.rounded(src="images/brands/international.png")
-									//- 			a.text-center(href='/product/b5' style="text-decoration: none;") اینترنشنال
-									//- li
-									//- 	a(href='/branches/c') دیزل ژنراتور
-									//- 	ul
-									//- 		li.text-center
-									//- 			img.rounded(src="images/branches/dieselgenerator.png")
-									//- 			a.small.m-1(href='/product/c1') استامفورد
-									//- 				img.ml-3(src="/images/brands/stamford.png")
-									//- li
-									//- 	a(href='/branches/d') کمپرسور
-									//- 	ul
-									//- 		li.text-center
-									//- 			img.rounded(src="images/branches/compressor.png")
-									//- 			a.small.m-1(href='/product/d') کومپرسور ها
-													//- div.p-4.bg-success.rellax(data-rellax-speed='-4')
-													//- 	p hi
-													//- br
-													//- div.p-4.bg-success.rellax(data-rellax-speed='7')
-													//- 	p hi
-													//- br
-													//- div.p-4.bg-success.rellax(data-rellax-speed='2')
-				.container(style="margin-top: -12em !important;")
-					.row
-						#mobilelogo(style="margin-right: 30em; margin-top: 2em; margin-bottom: -6em;")
-						#mobile.col-sm-3(style="font-size: 0.4rem !important;")
-					nav.navbar.navbar-inverse.navbar-fixed-top
-						.navbar-header
-							button.btn.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#bs-navbar-collapse-1' aria-expanded='false' style="border: 1px gray solid; border-radius: 5px; color: gray; font-size: 0.7rem; margin: 0.5em; margin-top: 1em !important;") منو
-					.row.mt-4
-						#bs-navbar-collapse-1.collapse.navbar-collapse.rounded(style="position:relative; -webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; transition: none !important; margin-top: -3em !important;")
-							ul.nav.navbar-nav.text-right.bg-dark.w-50.rounded(style="position: absolute;")
-								.col-sm-4
-									li.mt-2.mb-2
-										a.mba.menuitem(href='/' style="font-size: 0.4rem !important;") صفحه اصلی
-									li.mt-3.mb-2.dropdown
-										a.mba.dropdown-toggle.menuitem(href='#' data-toggle='dropdown' role='button' style="font-size: 0.4rem !important;")
-											| سیستم های تهویه مطبوع 
-											span.caret
-										ul.dropdown-menu.ml-5.pr-3.bg-secondary(style="font-size: 0.4rem !important; border: solid 1px gray; margin-right: 3em;  width: 0em !important")
-											li.mt-1.mb-2
-												a.menuitem.mba(href='#' style="font-size: 0.4rem !important;") کولر گازی
-											li.mt-3.mb-2
-												a.menuitem.mba(href='#' style="font-size: 0.4rem !important;") داکت اسپلیت
-									li.mt-3.mb-2.dropdown
-										a.mba.dropdown-toggle.menuitem(href='#' data-toggle='dropdown' role='button' style="font-size: 0.4rem !important;")
-											| سیستم های تهویه مطبوع 
-											span.caret
-										ul.dropdown-menu.ml-5.pr-3.bg-secondary(style="font-size: 0.4rem !important; border: solid 1px gray; margin-right: 3em;  width: 0em !important")
-											li.mt-1.mb-2
-												a.menuitem.mba(href='#' style="font-size: 0.4rem !important;") کولر گازی
-											li.mt-3.mb-2
-												a.menuitem.mba(href='#' style="font-size: 0.4rem !important;") داکت اسپلیت
-											//- li.dropdown-submenu
-											//- 	a.dropdown-submenu-toggle(tabindex='-1' href='#')
-											//- 		| Second Dropdown 
-											//- 		b.caret
-											//- 	ul.dropdown-menu
-											//- 		li
-											//- 			a(href='#') Sub-Menu Item
-											//- 		li
-											//- 			a(href='#') Sub-Menu Item
-											//- 		li
-											//- 			a(href='#') Sub-Menu Item
-											//- li
-											//- 	a(href='#') Menu Item
-											//- li
-											//- 	a(href='#') Menu Item
 					script.
 						$(function() {
 						$(window).resize();
@@ -577,4 +528,136 @@ body
 						"body").style.visibility = "visible"; 
 						} 
 						};
+		//- main
+		//- 	.wrapper
+		//- 		.content
+		//- 			h4 Position
+		//- 			.actions.position
+		//- 				div
+		//- 					a.button.active(href='#' data-demo="{position:'left'}") Left
+		//- 				div
+		//- 					a.button(href='#' data-demo="{position:'right'}") Right
+		//- 				div
+		//- 					a.button(href='#' data-demo="{position:'top', levelSpacing:0}") Top
+		//- 				div
+		//- 					a.button(href='#' data-demo="{position:'bottom', levelSpacing:0}") Bottom
+		//- 			h4 Theme
+		//- 			.actions.theme
+		//- 				div
+		//- 					a.thumb.active(href='#' data-demo="{theme:'default'}" title='Default' style='background-image:url(images/theme-1.png);')
+		//- 				div
+		//- 					a.thumb(href='#' data-demo="{theme:'carbon'}" title='Dark' style='background-image:url(images/theme-2.png);')
+		//- 			h4 Levels open type
+		//- 			.actions.levels
+		//- 				div
+		//- 					a.button.active(href='#' data-demo="{levelOpen:'overlap', levelSpacing:40}") Overlap levels
+		//- 				div
+		//- 					a.button(href='#' data-demo="{levelOpen:'expand', levelSpacing:25}") Expand levels
+		//- 				div
+		//- 					a.button(href='#' data-demo='{levelOpen:false, levelSpacing:25}') Unfolded levels
+		//- 			h4 Additional options
+		//- 			.actions.checkboxes
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo='{closeOnClick:true}' checked='')
+		//- 					span
+		//- 					| Close on click
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo='{disableBody:true}' checked='')
+		//- 					span
+		//- 					| Disable body
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo="{pushContent:'#container'}" checked='')
+		//- 					span
+		//- 					| Push content
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo="{navTitle: 'All Categories', levelTitles:true}" checked='')
+		//- 					span
+		//- 					| Main nav and level titles
+		//- 				div
+		//- 					label
+		//- 					input(type='checkbox' data-demo='{insertClose:true, insertBack:true}' checked='')
+		//- 					span
+		//- 					| Close and back buttons
+		//- footer
+			//- .wrapper
+			//- 	a.swm(href='https://github.com/somewebmedia' rel='noreferrer' target='_blank' title='Some Web Media')
+			//- 		svg(xmlns='http://www.w3.org/2000/svg' height='17' viewBox='0 0 430.24 46')
+			//- 			path.l-1(d='M0,46H44L92,0H48Z')
+			//- 			path.l-2(d='M237.24,46h-44l-26-24.92L141.24,46h-44l-24-23,22-21.08,24,23L145.24,0h44l26,24.92L241.24,0h44Z')
+			//- 			path.l-3(d='M386.24,46l-26-24.92L334.24,46h-44l-24-23,22-21.08,24,23L338.24,0h44l48,46h-44Z')
+		script.
+			(function($) {
+			'use strict';
+			// call our plugin
+			var Nav = new hcOffcanvasNav('#main-nav', {
+			disableAt: false,
+			customToggle: '.toggle',
+			levelSpacing: 40,
+			navTitle: 'دسته بندی محصولات',
+			levelTitles: true,
+			levelTitleAsBack: true,
+			levelOpen: 'expand',
+			//disableBody: false,
+			//pushContent: '#container',
+			labelClose: false
+			});
+			// add new items to original nav
+			$('#main-nav').find('li.add').children('a').on('click', function() {
+			var $this = $(this);
+			var $li = $this.parent();
+			var items = eval('(' + $this.attr('data-add') + ')');
+			$li.before('<li class="new"><a href="/branches/a/a1">'+items[0]+'</a></li>');
+			items.shift();
+			if (!items.length) {
+			$li.remove();
+			}
+			else {
+			$this.attr('data-add', JSON.stringify(items));
+			}
+			Nav.update(true); // update DOM
+			});
+			// demo settings update
+			const update = function(settings) {
+			if (Nav.isOpen()) {
+			Nav.on('close.once', function() {
+			Nav.update(settings);
+			Nav.open();
+			});
+			Nav.close();
+			}
+			else {
+			Nav.update(settings);
+			}
+			};
+			$('.actions').find('a').on('click', function(e) {
+			e.preventDefault();
+			var $this = $(this).addClass('active');
+			var $siblings = $this.parent().siblings().children('a').removeClass('active');
+			var settings = eval('(' + $this.data('demo') + ')');
+			if ('theme' in settings) {
+			$('body').removeClass().addClass('theme-' + settings['theme']);
+			}
+			else {
+			update(settings);
+			}
+			});
+			$('.actions').find('input').on('change', function() {
+			var $this = $(this);
+			var settings = eval('(' + $this.data('demo') + ')');
+			if ($this.is(':checked')) {
+			update(settings);
+			}
+			else {
+			var removeData = {};
+			$.each(settings, function(index, value) {
+			removeData[index] = false;
+			});
+			update(removeData);
+			}
+			});
+			})(jQuery);
 	block content
