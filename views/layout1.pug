@@ -33,15 +33,39 @@ head
 		{
 		text-decoration: none;
 		font-size: 0.7rem;
+		margin: 0 !important;
+		padding: 0 !important;
 		}
 		.dm-menu > ul > li > ul > li > ul > li > ul > li > a
 		{
 		text-decoration: none;
 		display: inline-block;
+		margin: 0 !important;
+		padding: 0 !important;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > ul > li > ul
+		{
+		background-color: lightblue;
+		border-radius: 1em;
 		}
 		.dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li > a
 		{
 		text-decoration: none;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li > a:hover
+		{
+		background-color: lightblue !important;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li
+		{
+		text-align: right !important;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li > a > img
+		{
+		margin-left: 1em !important;
+		margin-right: 0 !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
 		}
 
 		#loader { 
@@ -386,7 +410,7 @@ body.theme-default
 									|  صندوق پیشنهادات
 							li.SubmenuTabs.IconHidden
 								a(href='/')
-									i.fas.fa-cogs
+									i.fas.fa-shopping-bag
 									|  دسته بندی محصولات
 								ul.text-right(style="direction: ltr;")
 									li.SubmenuMega
@@ -398,65 +422,134 @@ body.theme-default
 												ul
 													li
 														a.small.m-1(href='/product/a3a') گری
-															img.ml-3(src="/images/brands/shantui.png")
+															//img.ml-3(src="/images/brands/gree.png")
 													li
 														a.small.m-1(href='/product/a3a') زانتی
-															img.ml-3(src="/images/brands/shantui.png")
+															//img.ml-3(src="/images/brands/shantui.png")
 													li.SubmenuMega
 														a.small.m-1(href='/branches/a3') سایر برند ها
 														ul.text-center(style="font-size: 0.75rem; color: gray; padding: 0px; margin-left: 3em")
 															li
 																a.small.m-1(href='/product/a3c') ایوولی
-																	//img.ml-3(src="/images/brands/newholland.png")
+																	img.ml-3.rounded(src="/images/brands/evvoli.png")
 																a.small.m-1(href='/product/a3d') گرین
-																	//img.ml-3(src="/images/brands/tiragemachine.png")
+																	img.ml-3.rounded(src="/images/brands/green.png")
 																a.small.m-1(href='/product/a3c') بوش
-																	//img.ml-3(src="/images/brands/newholland.png")
-															li(style="margin-left: -2em;")
+																	img.ml-3.rounded(src="/images/brands/bosch.png")
+															li(style="margin-left: -1em;")
 																a.small.m-1(href='/product/a3d') هایسنس
-																	//img.ml-3(src="/images/brands/tiragemachine.png")
+																	img.ml-3.rounded(src="/images/brands/hisense.png")
 																a.small.m-1(href='/product/a3c') تک الکتریک
-																	//img.ml-3(src="/images/brands/tiragemachine.png")
+																	img.ml-3.rounded(src="/images/brands/techelectric.png")
+												a.SubSubmenuInline(href='/branches/a7') هوا ساز
+												ul
+													li
+														a.small.m-1(href='/product/a7a') ال جی
+															//img.ml-3(src="/images/brands/lg.png")
+													li
+														a.small.m-1(href='/product/a7a') یورو ایر
+															//img.ml-3(src="/images/brands/changlin.png")
+													li.SubmenuMega
+														a.small.m-1(href='/branches/a3') سایر برند ها
+														ul.text-center(style="font-size: 0.75rem; color: gray; padding: 0px; margin-left: 3em")
+															li
+																a.small.m-1(href='/product/a3c') ایوولی
+																	img.ml-3.rounded(src="/images/brands/evvoli.png")
+																a.small.m-1(href='/product/a3c') بوش
+																	img.ml-3.rounded(src="/images/brands/bosch.png")
+															li(style="margin-left: -1em;")
+																a.small.m-1(href='/product/a3c') گرین
+																	img.ml-3.rounded(src="/images/brands/green.png")
 											li
 												div.rounded.tilt(style='background-image: url(images/split.jpg);')
 												a(href='/product/a2') داکت اسپلیت
 												ul
 													li
 														a.small.m-1(href='/product/a3a') یورو ایر
-															img.ml-3(src="/images/brands/shantui.png")
+															//img.ml-3(src="/images/brands/shantui.png")
 													li
-														a.small.m-1(href='/product/a3a') الجی
-															img.ml-3(src="/images/brands/shantui.png")
+														a.small.m-1(href='/product/a3a') ال جی
+															//img.ml-3(src="/images/brands/lg.png")
 													li.SubmenuMega
 														a.small.m-1(href='/branches/a3') سایر برند ها
 														ul.text-center(style="font-size: 0.75rem; color: gray; padding: 0px; margin-left: 3em")
 															li
 																a.small.m-1(href='/product/a3c') مدیا
-																	//img.ml-3(src="/images/brands/newholland.png")
+																	img.ml-3.rounded(src="/images/brands/media.png")
 																a.small.m-1(href='/product/a3c') جی پلاس
-																	//img.ml-3(src="/images/brands/newholland.png")
+																	img.ml-3.rounded(src="/images/brands/gplus.png")
 																a.small.m-1(href='/product/a3c') گرین
-																	//img.ml-3(src="/images/brands/newholland.png")
-															li(style="margin-left: -2em;")
+																	img.ml-3.rounded(src="/images/brands/green.png")
+															li(style="margin-left: -1em;")
 																a.small.m-1(href='/product/a3c') شیزن
-																	//img.ml-3(src="/images/brands/newholland.png")
+																	img.ml-3.rounded(src="/images/brands/techelectric.png")
 																a.small.m-1(href='/product/a3c') میتسوبیشی 
-																	//img.ml-3(src="/images/brands/newholland.png")
+																	img.ml-3.rounded(src="/images/brands/mitsubishi.png")
 																a.small.m-1(href='/product/a3c') تک الکتریک
-																	//img.ml-3(src="/images/brands/newholland.png")
+																	img.ml-3.rounded(src="/images/brands/techelectric.png")
 
 											li
 												div.rounded.tilt(style='background-image: url(images/split.jpg);')
 												a(href='/product/a2') اسپلیت مرکزی
+												ul
+													li
+														a.small.m-1(href='/product/a3a') میتسوبیشی
+															//img.ml-3(src="/images/brands/mitsubishi.png")
+													li
+														a.small.m-1(href='/product/a3a') چیگو
+															//img.ml-3(src="/images/brands/shantui.png")
+													li.SubmenuMega
+														a.small.m-1(href='/branches/a3') سایر برند ها
+														ul.text-center(style="font-size: 0.75rem; color: gray; padding: 0px; margin-left: 3em")
+															li
+																a.small.m-1(href='/product/a3c') آکس
+																	img.ml-3.rounded(src="/images/brands/ax.png")
+																a.small.m-1(href='/product/a3c') جی دایکین
+																	img.ml-3.rounded(src="/images/brands/daikin.png")
+															li(style="margin-left: -1em;")
+																a.small.m-1(href='/product/a3c') جی پلاس
+																	img.ml-3.rounded(src="/images/brands/gplus.png")
+																a.small.m-1(href='/product/a3c') ال جی
+																	img.ml-3.rounded(src="/images/brands/lg.png")
 											li
 												div.rounded.tilt(style='background-image: url(images/split.jpg);')
 												a(href='/product/a2') فن کوئل
+												ul
+													li
+														a.small.m-1(href='/product/a3a') یورو ایر
+															//img.ml-3(src="/images/brands/shantui.png")
+													li
+														a.small.m-1(href='/product/a3a') گلدیران
+															//img.ml-3(src="/images/brands/shantui.png")
+													li
+														a.small.m-1(href='/product/a3a') گرین
+															//img.ml-3(src="/images/brands/green.png")
+													//- li.SubmenuMega
+													//- 	a.small.m-1(href='/branches/a3') سایر برند ها
+													//- 	ul.text-center(style="font-size: 0.75rem; color: gray; padding: 0px; margin-left: 3em")
+													//- 		li
+													//- 			a.small.m-1(href='/product/a3c') مدیا
+													//- 				//img.ml-3(src="/images/brands/newholland.png")
+													//- 			a.small.m-1(href='/product/a3c') جی پلاس
+													//- 				//img.ml-3(src="/images/brands/newholland.png")
+													//- 			a.small.m-1(href='/product/a3c') گرین
+													//- 				//img.ml-3(src="/images/brands/newholland.png")
+													//- 		li(style="margin-left: -2em;")
+													//- 			a.small.m-1(href='/product/a3c') شیزن
+													//- 				//img.ml-3(src="/images/brands/newholland.png")
+													//- 			a.small.m-1(href='/product/a3c') میتسوبیشی 
+													//- 				//img.ml-3(src="/images/brands/newholland.png")
+													//- 			a.small.m-1(href='/product/a3c') تک الکتریک
+													//- 				//img.ml-3(src="/images/brands/newholland.png")
+
 											li
 												div.rounded.tilt(style='background-image: url(images/split.jpg);')
 												a(href='/product/a2') چیلر
 											li
 												div.rounded.tilt(style='background-image: url(images/split.jpg);')
 												a(href='/product/a2') مینی چیلر
+									li.SubmenuMega
+										a(href='/branches/a') سیستم های تهویه مطبوع
 					script.
 						$(function() {
 						$(window).resize();
