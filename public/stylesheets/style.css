@@ -433,6 +433,9 @@ img#user:hover {
   #web {
     visibility: visible;
   }
+  body {
+    font-size: 0.8rem !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -482,6 +485,12 @@ img#user:hover {
   .dm-menu > ul > li > ul > li > ul > li > ul > li > ul
   {
     margin-left: 2em !important;
+  }
+  body {
+    font-size: 0.7rem !important;
+  }
+  .menuitem {
+    font-size: 0.7rem !important;
   }
 }
 
