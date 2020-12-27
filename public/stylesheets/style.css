@@ -336,6 +336,22 @@ img#user:hover {
   transition: .5s;
 }
 
+#productc {
+  background-image: url(/images/excavator.png);
+   background-blend-mode: lighten;
+  background-color: rgba(249, 255, 220, 0.7);
+  background-size: cover;
+  transition: .5s;
+}
+
+#productb {
+  background-image: url(/images/excavator.png);
+   background-blend-mode: lighten;
+  background-color: rgba(249, 255, 220, 0.7);
+  background-size: cover;
+  transition: .5s;
+}
+
 #producta:hover {
   background-image: url(/images/view.jpg);
   background-blend-mode: lighten;
