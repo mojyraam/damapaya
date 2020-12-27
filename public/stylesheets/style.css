@@ -283,6 +283,26 @@ img#user:hover {
   text-decoration: none;
 }
 
+#brands {
+  text-align: center;
+  list-style: none;
+}
+
+#brands a {
+  display: inline-block;
+  margin: 12px;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 1em;
+  border: 1px solid green;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+  cursor: pointer;
+  color: green;
+  text-decoration: none;
+  font-size: 0.6rem !important;
+}
+
 #productmain {
   background-blend-mode: lighten;
   background-color: rgba(249, 255, 220, 0.7);
@@ -506,4 +526,15 @@ img#user:hover {
   line-height: 0; 
   font-size: 0;
   color: transparent;
+}
+
+.prfamily {
+  background-blend-mode: lighten;
+  background-color: rgba(249, 255, 220, 0.7);
+  background-size: cover;
+  transition: .5s;
+}
+
+.prfamily:hover {
+  background-color: rgba(220, 234, 255, 0.9);
 }
